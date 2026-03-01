@@ -5,8 +5,6 @@ from data.imagenet import *
 from data.pacs import *
 from data.office_home import *
 import torch
-from data.wilds_rr1 import *
-from data.breeds import *
 
 def build_dataloader(dataname, args):
     random_seeds = torch.randint(0, 10000, (2,))
@@ -62,12 +60,14 @@ def build_dataloader(dataname, args):
                                corruption_severity=args['severity'],
                                datatype=datatype)
     elif dataname == 'wilds_rr1':
+        from data.wilds_rr1 import load_wilds_rxrx1
         valset = load_wilds_rxrx1(corruption_type,
                                clean_cifar_path=args['cifar_data_path'],
                                corruption_cifar_path=args['cifar_corruption_path'],
                                corruption_severity=args['severity'],
                                datatype=datatype)
     elif (dataname == 'entity13') or (dataname == 'entity30') or (dataname == 'living17') or (dataname == 'nonliving26'):
+        from data.breeds import get_imagenet_breeds
         if (datatype == 'train') and (args['alg']!='frechet'):
             name = args['train_data_name']
         else:
