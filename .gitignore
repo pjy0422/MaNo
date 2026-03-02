@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Datasets
+datasets/
+*.npy
+*.npz
+
+# Images
+*.jpeg
+*.JPEG
+*.jpg
+*.JPG
+*.png
+*.PNG
+
+# OS
+.DS_Store
+Thumbs.db
