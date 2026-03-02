@@ -7,7 +7,7 @@ import time
 from utils.logging_utils import (
     init_wandb, log_iteration, log_summary,
     make_scatter_plot, log_scatter_to_wandb,
-    save_results_json, finish_wandb,
+    save_results_json, log_artifacts_to_wandb, finish_wandb,
 )
 
 """# Configuration"""
@@ -221,9 +221,10 @@ if __name__ == "__main__":
             "iterations": iteration_metadata,
         }, json_path)
 
-        # wandb summary + scatter upload + finish
+        # wandb summary + scatter upload + artifacts + finish
         log_summary(wandb_run, r2, sp, float(mean_score), float(mean_time), total_wall)
         log_scatter_to_wandb(wandb_run, scatter_path)
+        log_artifacts_to_wandb(wandb_run, json_path, scatter_path)
         finish_wandb(wandb_run)
 
     else:
@@ -312,7 +313,8 @@ if __name__ == "__main__":
             "iterations": iteration_metadata,
         }, json_path)
 
-        # wandb summary + scatter upload + finish
+        # wandb summary + scatter upload + artifacts + finish
         log_summary(wandb_run, r2, sp, float(mean_score), float(mean_time), total_wall)
         log_scatter_to_wandb(wandb_run, scatter_path)
+        log_artifacts_to_wandb(wandb_run, json_path, scatter_path)
         finish_wandb(wandb_run)

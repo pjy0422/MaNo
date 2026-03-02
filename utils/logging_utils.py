@@ -136,6 +136,26 @@ def save_results_json(results_dict, save_path):
     print("[logging_utils] Results saved to {}".format(save_path))
 
 
+def log_artifacts_to_wandb(wandb_run, json_path, scatter_path):
+    """Upload JSON results and scatter plot PDF as wandb artifacts."""
+    if wandb_run is None:
+        return
+    try:
+        import wandb
+        artifact = wandb.Artifact(
+            name=os.path.splitext(os.path.basename(json_path))[0],
+            type="results",
+        )
+        if os.path.exists(json_path):
+            artifact.add_file(json_path)
+        if os.path.exists(scatter_path):
+            artifact.add_file(scatter_path)
+        wandb_run.log_artifact(artifact)
+        print("[logging_utils] Artifacts uploaded to wandb.")
+    except Exception as e:
+        print("[logging_utils] Failed to log artifacts to wandb: {}".format(e))
+
+
 def finish_wandb(wandb_run):
     """Finish the wandb run."""
     if wandb_run is None:

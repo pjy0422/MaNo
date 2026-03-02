@@ -4,8 +4,8 @@ gpu=$1
 DATA_ROOT=./datasets
 
 # wandb / results config (leave WANDB_PROJECT empty to disable wandb)
-WANDB_PROJECT="${WANDB_PROJECT:-}"
-WANDB_GROUP="${WANDB_GROUP:-}"
+WANDB_PROJECT="${WANDB_PROJECT:-mano}"
+WANDB_GROUP="${WANDB_GROUP:-cifar-tinyimagenet-eval}"
 RESULTS_DIR="${RESULTS_DIR:-results}"
 
 WANDB_ARGS=""
