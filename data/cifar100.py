@@ -4,6 +4,8 @@ import torchvision.datasets as datasets
 import os
 import numpy as np
 
+_npy_cache = {}
+
 
 def load_cifar100_image(corruption_type,
                        clean_cifar_path,
@@ -11,7 +13,8 @@ def load_cifar100_image(corruption_type,
                        corruption_severity=0,
                        datatype='test',
                        num_samples=50000,
-                       seed=1):
+                       seed=1,
+                       skip_resize=False):
     """
     Returns:
         pytorch dataset object
@@ -21,11 +24,17 @@ def load_cifar100_image(corruption_type,
 
     mean = [0.485, 0.456, 0.406]
     std = [0.229, 0.224, 0.225]
-    transform = transforms.Compose([
-        transforms.Resize(224),
-        transforms.ToTensor(),
-        transforms.Normalize(mean, std),
-    ])
+    if skip_resize:
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize(mean, std),
+        ])
+    else:
+        transform = transforms.Compose([
+            transforms.Resize(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean, std),
+        ])
 
     dataset = datasets.CIFAR100(clean_cifar_path,
                                train=training_flag,
@@ -37,8 +46,12 @@ def load_cifar100_image(corruption_type,
         path_images = os.path.join(corruption_cifar_path, corruption_type + '.npy')
         path_labels = os.path.join(corruption_cifar_path, 'labels.npy')
 
-        dataset.data = np.load(path_images)[(corruption_severity - 1) * 10000:corruption_severity * 10000]
-        dataset.targets = list(np.load(path_labels)[(corruption_severity - 1) * 10000:corruption_severity * 10000])
+        if path_images not in _npy_cache:
+            _npy_cache[path_images] = np.load(path_images)
+        if path_labels not in _npy_cache:
+            _npy_cache[path_labels] = np.load(path_labels)
+        dataset.data = _npy_cache[path_images][(corruption_severity - 1) * 10000:corruption_severity * 10000].copy()
+        dataset.targets = list(_npy_cache[path_labels][(corruption_severity - 1) * 10000:corruption_severity * 10000])
         dataset.targets = [int(item) for item in dataset.targets]
 
     # randomly permute data

@@ -11,6 +11,7 @@ class MaNo(Base_alg):
         for batch_idx, batch_data in enumerate(self.val_loader):
             inputs, labels = batch_data[0], batch_data[1]
             inputs, labels = inputs.to(self.device), labels.to(self.device)
+            inputs = self._gpu_resize(inputs)
 
             with torch.no_grad():
                 outputs = self.base_model(inputs)
@@ -42,6 +43,7 @@ class MaNo(Base_alg):
             if batch_idx < 5:
                 inputs, labels = batch_data[0], batch_data[1]
                 inputs, labels = inputs.to(self.device), labels.to(self.device)
+                inputs = self._gpu_resize(inputs)
                 with torch.no_grad():
                     logits = self.base_model(inputs)
                     targets = torch.ones((logits.shape[0], self.args["num_classes"])).to(self.device) * (

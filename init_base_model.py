@@ -5,6 +5,7 @@ from data.utils import build_dataloader
 from data.tools import rotate_batch
 import torch
 import os
+import time
 
 """# Configuration"""
 parser = argparse.ArgumentParser(description='Train base models for different matrics.')
@@ -57,7 +58,9 @@ def train(net, trainloader, device):
                                                            T_max=args['train_epoch'] * len(trainloader))
     criterion = nn.CrossEntropyLoss()
 
+    train_start = time.time()
     for epoch in range(args['train_epoch']):
+        epoch_start = time.time()
         train_loss = 0
         correct = 0
         total = 0
@@ -82,10 +85,23 @@ def train(net, trainloader, device):
                       'Loss: %.3f | Acc: %.3f%% (%d/%d)| Lr: %.5f' % (
                           train_loss / (batch_idx + 1), 100. * correct / total, correct, total, current_lr))
             scheduler.step()
+        epoch_time = time.time() - epoch_start
+        epoch_loss = train_loss / (batch_idx + 1)
+        epoch_acc = 100. * correct / total
+        print('[Epoch %d/%d] Loss: %.3f | Acc: %.3f%% | Time: %.1fs' % (
+            epoch + 1, args['train_epoch'], epoch_loss, epoch_acc, epoch_time))
+    total_time = time.time() - train_start
+    print('Training complete | Total time: %.1fs (%.1fs/epoch)' % (total_time, total_time / args['train_epoch']))
     net.eval()
     return net
 
 if __name__ == "__main__":
+    print('=' * 60)
+    print('Config: dataset={}, arch={}, epochs={}, lr={}, bs={}, device={}'.format(
+        args['train_data_name'], args['arch'], args['train_epoch'],
+        args['lr'], args['batch_size'], device))
+    print('=' * 60)
+
     # save path
     if args['train_data_name'] == 'imagenet':
         save_dir_path = './checkpoints/{}'.format(args['train_data_name'] + '_' + args['arch'] + '_' + str(args['num_classes']))
@@ -97,11 +113,18 @@ if __name__ == "__main__":
         os.makedirs(save_dir_path)
 
     # setup train/val_iid loaders
+    print('Loading dataset...')
+    load_start = time.time()
     trainloader = build_dataloader(args['train_data_name'], args)
+    print('Dataset loaded | samples={}, batches={} | {:.1f}s'.format(
+        len(trainloader.dataset), len(trainloader), time.time() - load_start))
 
     # init and train base model
+    num_params = sum(p.numel() for p in get_model(args['arch'], args['num_classes'], args['seed']).parameters())
+    print('Model: {} | params={:,} | classes={}'.format(args['arch'], num_params, args['num_classes']))
     base_model = get_model(args['arch'], args['num_classes'], args['seed']).to(device)
     base_model = train(base_model, trainloader, device)
 
     torch.save(base_model.state_dict(), '{}/base_model.pt'.format(save_dir_path))
-    print('base model saved to', '{}/base_model.pt'.format(save_dir_path))
+    file_size = os.path.getsize('{}/base_model.pt'.format(save_dir_path)) / (1024 * 1024)
+    print('Saved: {} ({:.1f} MB)'.format(save_dir_path + '/base_model.pt', file_size))

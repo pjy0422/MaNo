@@ -32,6 +32,7 @@ parser.add_argument('--source', default='None', type=str)
 args = vars(parser.parse_args())
 
 import torch
+from models.utils import get_model, get_imagenet_model
 if args["gpu"] is not None:
     device = torch.device(f"cuda:{args['gpu']}")
 else:
@@ -99,46 +100,86 @@ if __name__ == "__main__":
         raise TypeError('No relevant corruption list!')
 
     if args['dataname'] not in ['pacs', 'office_home', 'domainnet']:
+        # Pre-load model once before loop
+        if ('imagenet' in args['dataname']) and (args['num_classes'] == 1000):
+            base_model = get_imagenet_model(args['arch'], args['num_classes'], args['seed']).to(device)
+        else:
+            save_dir_path = './checkpoints/{}'.format(args['dataname'] + '_' + args['arch'])
+            base_model = get_model(args['arch'], args['num_classes'], args['seed']).to(device)
+            base_model.load_state_dict(torch.load('{}/base_model.pt'.format(save_dir_path), map_location=device))
+
+        total_iters = len(corruption_list) * max_severity
         scores_list = []
         test_acc_list = []
         time_list = []
-        print('alg:{}, dataname:{}, model:{}'.format(args['alg'], args['dataname'], args['arch']))
+        print('=' * 70)
+        print('alg:{}, dataname:{}, model:{}, device:{}'.format(
+            args['alg'], args['dataname'], args['arch'], device))
+        print('corruptions:{}, severities:{}, total_iters:{}'.format(
+            len(corruption_list), max_severity, total_iters))
+        print('=' * 70)
+        wall_start = time.time()
+        iter_idx = 0
         for corruption in corruption_list:
+            corr_scores = []
+            corr_accs = []
             for severity in range(1, max_severity+1):
+                iter_idx += 1
                 args["corruption"] = corruption
                 args["severity"] = severity
                 # (original x, true labels)
-                val_loader = build_dataloader(args['dataname'], args)
+                val_loader = build_dataloader(args['dataname'], args, skip_resize=True)
                 # Define model
-                alg_obj = create_alg(args['alg'], val_loader, device, args)
+                alg_obj = create_alg(args['alg'], val_loader, device, args, base_model=base_model)
                 start_time = time.time()
                 if args['delta'] == 0:
                     args['delta'] = alg_obj.uniform_cross_entropy()
                 scores = alg_obj.evaluate()
                 end_time = time.time()
                 test_acc = alg_obj.test()
+                iter_time = end_time - start_time
                 scores_list.append(float(scores))
-                time_list.append(float(end_time - start_time))
+                time_list.append(float(iter_time))
                 test_acc_list.append(float(test_acc))
-                print('corruption:{}, severity:{}, score:{}, test acc:{}'.format(args['corruption'], args['severity'], scores, test_acc))
+                corr_scores.append(float(scores))
+                corr_accs.append(float(test_acc))
+                elapsed = time.time() - wall_start
+                eta = elapsed / iter_idx * (total_iters - iter_idx)
+                print('[{}/{}] corruption:{}, severity:{}, score:{:.4f}, test acc:{:.2f}%, time:{:.1f}s (elapsed:{:.0f}s, ETA:{:.0f}s)'.format(
+                    iter_idx, total_iters, corruption, severity, float(scores), float(test_acc), iter_time, elapsed, eta))
+            if max_severity > 1:
+                print('  >> {} avg | score:{:.4f}, test acc:{:.2f}%'.format(
+                    corruption, np.mean(corr_scores), np.mean(corr_accs)))
+        total_wall = time.time() - wall_start
         mean_score = np.mean(scores_list)
         mean_time = np.mean(time_list)
+        print('=' * 70)
         print('Mean scores:{}, time:{}'.format(mean_score, mean_time))
         print("Correlation:{}".format(correlation2(scores_list, test_acc_list)))
         print("Spearman:{}".format(spearman(scores_list, test_acc_list).correlation))
+        print('Total wall time: {:.1f}s'.format(total_wall))
+        print('=' * 70)
     else:
+        n_domains = len(corruption_list)
+        total_iters = n_domains * (n_domains - 1)
         scores_list = []
         test_acc_list = []
         time_list = []
-        print('alg:{}, dataname:{}, model:{}'.format(args['alg'],
-                                                     args['dataname'], args['arch']))
+        print('=' * 70)
+        print('alg:{}, dataname:{}, model:{}, device:{}'.format(
+            args['alg'], args['dataname'], args['arch'], device))
+        print('domains:{}, total_iters:{}'.format(corruption_list, total_iters))
+        print('=' * 70)
+        wall_start = time.time()
+        iter_idx = 0
         for corruption in corruption_list:
             for source in corruption_list:
                 if corruption != source:
+                    iter_idx += 1
                     args["corruption"] = corruption
                     args["source"] = source
                     args["severity"] = 1
-                    val_loader = build_dataloader(args['dataname'], args)
+                    val_loader = build_dataloader(args['dataname'], args, skip_resize=True)
                     # Define model
                     alg_obj = create_alg(args['alg'], val_loader, device, args)
 
@@ -149,14 +190,21 @@ if __name__ == "__main__":
                     end_time = time.time()
 
                     test_acc = alg_obj.test()
+                    iter_time = end_time - start_time
                     scores_list.append(float(scores))
-                    time_list.append(float(end_time - start_time))
+                    time_list.append(float(iter_time))
                     test_acc_list.append(float(test_acc))
-                    print('corruption:{}, severity:{}, score:{}, test acc:{}'.format(args['corruption'], args['severity'],
-                                                                                     scores, test_acc))
+                    elapsed = time.time() - wall_start
+                    eta = elapsed / iter_idx * (total_iters - iter_idx)
+                    print('[{}/{}] source:{}, target:{}, score:{:.4f}, test acc:{:.2f}%, time:{:.1f}s (elapsed:{:.0f}s, ETA:{:.0f}s)'.format(
+                        iter_idx, total_iters, source, corruption, float(scores), float(test_acc), iter_time, elapsed, eta))
+        total_wall = time.time() - wall_start
         mean_score = np.mean(scores_list)
         mean_time = np.mean(time_list)
+        print('=' * 70)
         print('Mean scores:{}, time:{}'.format(mean_score, mean_time))
         print("Correlation:{}".format(correlation2(scores_list, test_acc_list)))
         print("Spearman:{}".format(spearman(scores_list, test_acc_list).correlation))
+        print('Total wall time: {:.1f}s'.format(total_wall))
+        print('=' * 70)
 

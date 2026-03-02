@@ -6,7 +6,7 @@ from data.pacs import *
 from data.office_home import *
 import torch
 
-def build_dataloader(dataname, args):
+def build_dataloader(dataname, args, skip_resize=False):
     random_seeds = torch.randint(0, 10000, (2,))
     if args['severity'] == 0:
         seed = 1
@@ -23,7 +23,8 @@ def build_dataloader(dataname, args):
                                     corruption_severity=args['severity'],
                                     datatype=datatype,
                                     seed=seed,
-                                    num_samples=args['num_samples'])
+                                    num_samples=args['num_samples'],
+                                    skip_resize=skip_resize)
     elif dataname == 'cifar100':
         valset = load_cifar100_image(corruption_type,
                                     clean_cifar_path=args['cifar_data_path'],
@@ -31,13 +32,15 @@ def build_dataloader(dataname, args):
                                     corruption_severity=args['severity'],
                                     datatype=datatype,
                                     seed=seed,
-                                    num_samples=args['num_samples'])
+                                    num_samples=args['num_samples'],
+                                    skip_resize=skip_resize)
     elif dataname == 'tinyimagenet':
         valset = load_tinyimagenet(corruption_type,
                                clean_cifar_path=args['cifar_data_path'],
                                corruption_cifar_path=args['cifar_corruption_path'],
                                corruption_severity=args['severity'],
-                               datatype=datatype)
+                               datatype=datatype,
+                               skip_resize=skip_resize)
     elif dataname == 'imagenet':
         valset = load_Imagenet(corruption_type,
                                clean_cifar_path=args['cifar_data_path'],
@@ -84,6 +87,8 @@ def build_dataloader(dataname, args):
 
     valset_loader = torch.utils.data.DataLoader(valset,
                                                 batch_size=args['batch_size'],
-                                                num_workers = 4,
-                                                shuffle=True)
+                                                num_workers=4,
+                                                shuffle=True,
+                                                pin_memory=True,
+                                                persistent_workers=True)
     return valset_loader
