@@ -1,0 +1,1052 @@
+======================================================================
+alg:mano, dataname:cifar10, model:resnet18, device:cuda:2
+corruptions:19, severities:5, total_iters:95
+======================================================================
+[1/95] corruption:brightness, severity:1, score:0.5475, test acc:94.17%, time:1.9s (elapsed:4s, ETA:369s)
+[2/95] corruption:brightness, severity:2, score:0.5471, test acc:94.09%, time:1.4s (elapsed:7s, ETA:337s)
+[3/95] corruption:brightness, severity:3, score:0.5463, test acc:93.49%, time:1.4s (elapsed:11s, ETA:326s)
+[4/95] corruption:brightness, severity:4, score:0.5449, test acc:92.87%, time:1.4s (elapsed:14s, ETA:320s)
+[5/95] corruption:brightness, severity:5, score:0.5412, test acc:91.25%, time:1.4s (elapsed:18s, ETA:315s)
+  >> brightness avg | score:0.5454, test acc:93.17%
+[6/95] corruption:contrast, severity:1, score:0.5470, test acc:93.99%, time:1.4s (elapsed:21s, ETA:311s)
+[7/95] corruption:contrast, severity:2, score:0.5455, test acc:93.47%, time:1.4s (elapsed:24s, ETA:307s)
+[8/95] corruption:contrast, severity:3, score:0.5448, test acc:93.01%, time:1.4s (elapsed:28s, ETA:303s)
+[9/95] corruption:contrast, severity:4, score:0.5430, test acc:92.10%, time:1.4s (elapsed:31s, ETA:298s)
+[10/95] corruption:contrast, severity:5, score:0.5332, test acc:87.70%, time:1.4s (elapsed:35s, ETA:294s)
+  >> contrast avg | score:0.5427, test acc:92.05%
+[11/95] corruption:defocus_blur, severity:1, score:0.5471, test acc:94.12%, time:1.4s (elapsed:38s, ETA:291s)
+[12/95] corruption:defocus_blur, severity:2, score:0.5458, test acc:93.38%, time:1.4s (elapsed:42s, ETA:287s)
+[13/95] corruption:defocus_blur, severity:3, score:0.5434, test acc:91.98%, time:1.4s (elapsed:45s, ETA:283s)
+[14/95] corruption:defocus_blur, severity:4, score:0.5386, test acc:89.78%, time:1.4s (elapsed:48s, ETA:279s)
+[15/95] corruption:defocus_blur, severity:5, score:0.5280, test acc:84.19%, time:1.4s (elapsed:52s, ETA:276s)
+  >> defocus_blur avg | score:0.5406, test acc:90.69%
+[16/95] corruption:elastic_transform, severity:1, score:0.5392, test acc:90.45%, time:1.4s (elapsed:55s, ETA:273s)
+[17/95] corruption:elastic_transform, severity:2, score:0.5401, test acc:90.85%, time:1.4s (elapsed:59s, ETA:269s)
+[18/95] corruption:elastic_transform, severity:3, score:0.5369, test acc:89.22%, time:1.4s (elapsed:62s, ETA:266s)
+[19/95] corruption:elastic_transform, severity:4, score:0.5225, test acc:82.82%, time:1.4s (elapsed:66s, ETA:262s)
+[20/95] corruption:elastic_transform, severity:5, score:0.5078, test acc:74.99%, time:1.4s (elapsed:69s, ETA:259s)
+  >> elastic_transform avg | score:0.5293, test acc:85.67%
+[21/95] corruption:fog, severity:1, score:0.5474, test acc:94.16%, time:1.4s (elapsed:72s, ETA:255s)
+[22/95] corruption:fog, severity:2, score:0.5455, test acc:93.64%, time:1.4s (elapsed:76s, ETA:252s)
+[23/95] corruption:fog, severity:3, score:0.5440, test acc:92.87%, time:1.4s (elapsed:79s, ETA:248s)
+[24/95] corruption:fog, severity:4, score:0.5410, test acc:91.09%, time:1.4s (elapsed:83s, ETA:245s)
+[25/95] corruption:fog, severity:5, score:0.5300, test acc:85.71%, time:1.4s (elapsed:86s, ETA:241s)
+  >> fog avg | score:0.5416, test acc:91.49%
+[26/95] corruption:frost, severity:1, score:0.5432, test acc:92.36%, time:1.4s (elapsed:90s, ETA:238s)
+[27/95] corruption:frost, severity:2, score:0.5379, test acc:89.48%, time:1.4s (elapsed:93s, ETA:235s)
+[28/95] corruption:frost, severity:3, score:0.5322, test acc:86.32%, time:1.4s (elapsed:97s, ETA:231s)
+[29/95] corruption:frost, severity:4, score:0.5309, test acc:86.00%, time:1.4s (elapsed:100s, ETA:228s)
+[30/95] corruption:frost, severity:5, score:0.5239, test acc:81.86%, time:1.4s (elapsed:104s, ETA:224s)
+  >> frost avg | score:0.5336, test acc:87.20%
+[31/95] corruption:gaussian_blur, severity:1, score:0.5475, test acc:94.01%, time:1.4s (elapsed:107s, ETA:221s)
+[32/95] corruption:gaussian_blur, severity:2, score:0.5431, test acc:92.24%, time:1.4s (elapsed:110s, ETA:217s)
+[33/95] corruption:gaussian_blur, severity:3, score:0.5398, test acc:90.53%, time:1.4s (elapsed:114s, ETA:214s)
+[34/95] corruption:gaussian_blur, severity:4, score:0.5363, test acc:88.71%, time:1.4s (elapsed:117s, ETA:210s)
+[35/95] corruption:gaussian_blur, severity:5, score:0.5269, test acc:83.59%, time:1.4s (elapsed:121s, ETA:207s)
+  >> gaussian_blur avg | score:0.5387, test acc:89.82%
+[36/95] corruption:gaussian_noise, severity:1, score:0.5286, test acc:85.26%, time:1.4s (elapsed:124s, ETA:203s)
+[37/95] corruption:gaussian_noise, severity:2, score:0.5136, test acc:76.85%, time:1.4s (elapsed:128s, ETA:200s)
+[38/95] corruption:gaussian_noise, severity:3, score:0.4974, test acc:68.50%, time:1.4s (elapsed:131s, ETA:196s)
+[39/95] corruption:gaussian_noise, severity:4, score:0.4905, test acc:64.03%, time:1.4s (elapsed:134s, ETA:193s)
+[40/95] corruption:gaussian_noise, severity:5, score:0.4821, test acc:59.48%, time:1.4s (elapsed:138s, ETA:189s)
+  >> gaussian_noise avg | score:0.5024, test acc:70.82%
+[41/95] corruption:glass_blur, severity:1, score:0.5056, test acc:74.88%, time:1.4s (elapsed:141s, ETA:186s)
+[42/95] corruption:glass_blur, severity:2, score:0.5059, test acc:75.06%, time:1.4s (elapsed:145s, ETA:183s)
+[43/95] corruption:glass_blur, severity:3, score:0.5063, test acc:75.56%, time:1.4s (elapsed:148s, ETA:179s)
+[44/95] corruption:glass_blur, severity:4, score:0.4857, test acc:63.62%, time:1.4s (elapsed:152s, ETA:176s)
+[45/95] corruption:glass_blur, severity:5, score:0.4869, test acc:63.87%, time:1.4s (elapsed:155s, ETA:172s)
+  >> glass_blur avg | score:0.4981, test acc:70.60%
+[46/95] corruption:impulse_noise, severity:1, score:0.5321, test acc:87.70%, time:1.4s (elapsed:159s, ETA:169s)
+[47/95] corruption:impulse_noise, severity:2, score:0.5216, test acc:81.35%, time:1.4s (elapsed:162s, ETA:165s)
+[48/95] corruption:impulse_noise, severity:3, score:0.5133, test acc:76.72%, time:1.4s (elapsed:165s, ETA:162s)
+[49/95] corruption:impulse_noise, severity:4, score:0.4939, test acc:67.06%, time:1.4s (elapsed:169s, ETA:159s)
+[50/95] corruption:impulse_noise, severity:5, score:0.4799, test acc:58.06%, time:1.4s (elapsed:172s, ETA:155s)
+  >> impulse_noise avg | score:0.5081, test acc:74.18%
+[51/95] corruption:jpeg_compression, severity:1, score:0.5256, test acc:83.35%, time:1.4s (elapsed:176s, ETA:152s)
+[52/95] corruption:jpeg_compression, severity:2, score:0.5139, test acc:76.72%, time:1.5s (elapsed:179s, ETA:148s)
+[53/95] corruption:jpeg_compression, severity:3, score:0.5102, test acc:74.16%, time:1.4s (elapsed:183s, ETA:145s)
+[54/95] corruption:jpeg_compression, severity:4, score:0.5046, test acc:71.41%, time:1.4s (elapsed:186s, ETA:141s)
+[55/95] corruption:jpeg_compression, severity:5, score:0.4980, test acc:67.82%, time:1.4s (elapsed:190s, ETA:138s)
+  >> jpeg_compression avg | score:0.5105, test acc:74.69%
+[56/95] corruption:motion_blur, severity:1, score:0.5419, test acc:91.53%, time:1.4s (elapsed:193s, ETA:135s)
+[57/95] corruption:motion_blur, severity:2, score:0.5365, test acc:89.12%, time:1.4s (elapsed:197s, ETA:131s)
+[58/95] corruption:motion_blur, severity:3, score:0.5304, test acc:85.82%, time:1.4s (elapsed:200s, ETA:128s)
+[59/95] corruption:motion_blur, severity:4, score:0.5305, test acc:85.66%, time:1.4s (elapsed:204s, ETA:124s)
+[60/95] corruption:motion_blur, severity:5, score:0.5240, test acc:81.74%, time:1.4s (elapsed:207s, ETA:121s)
+  >> motion_blur avg | score:0.5327, test acc:86.77%
+[61/95] corruption:pixelate, severity:1, score:0.5435, test acc:92.72%, time:1.4s (elapsed:210s, ETA:117s)
+[62/95] corruption:pixelate, severity:2, score:0.5395, test acc:90.85%, time:1.4s (elapsed:214s, ETA:114s)
+[63/95] corruption:pixelate, severity:3, score:0.5381, test acc:89.82%, time:1.4s (elapsed:217s, ETA:110s)
+[64/95] corruption:pixelate, severity:4, score:0.5302, test acc:86.03%, time:1.4s (elapsed:221s, ETA:107s)
+[65/95] corruption:pixelate, severity:5, score:0.5164, test acc:79.83%, time:1.4s (elapsed:224s, ETA:103s)
+  >> pixelate avg | score:0.5335, test acc:87.85%
+[66/95] corruption:saturate, severity:1, score:0.5463, test acc:93.49%, time:1.4s (elapsed:228s, ETA:100s)
+[67/95] corruption:saturate, severity:2, score:0.5427, test acc:92.04%, time:1.4s (elapsed:231s, ETA:97s)
+[68/95] corruption:saturate, severity:3, score:0.5472, test acc:94.22%, time:1.4s (elapsed:234s, ETA:93s)
+[69/95] corruption:saturate, severity:4, score:0.5449, test acc:93.03%, time:1.4s (elapsed:238s, ETA:90s)
+[70/95] corruption:saturate, severity:5, score:0.5402, test acc:90.91%, time:1.4s (elapsed:241s, ETA:86s)
+  >> saturate avg | score:0.5443, test acc:92.74%
+[71/95] corruption:shot_noise, severity:1, score:0.5356, test acc:89.01%, time:1.5s (elapsed:245s, ETA:83s)
+[72/95] corruption:shot_noise, severity:2, score:0.5270, test acc:84.81%, time:1.4s (elapsed:248s, ETA:79s)
+[73/95] corruption:shot_noise, severity:3, score:0.5089, test acc:74.47%, time:1.4s (elapsed:252s, ETA:76s)
+[74/95] corruption:shot_noise, severity:4, score:0.5027, test acc:71.09%, time:1.4s (elapsed:255s, ETA:72s)
+[75/95] corruption:shot_noise, severity:5, score:0.4903, test acc:63.90%, time:1.4s (elapsed:258s, ETA:69s)
+  >> shot_noise avg | score:0.5129, test acc:76.66%
+[76/95] corruption:snow, severity:1, score:0.5417, test acc:91.48%, time:1.4s (elapsed:262s, ETA:65s)
+[77/95] corruption:snow, severity:2, score:0.5326, test acc:87.10%, time:1.4s (elapsed:265s, ETA:62s)
+[78/95] corruption:snow, severity:3, score:0.5329, test acc:87.30%, time:1.4s (elapsed:269s, ETA:59s)
+[79/95] corruption:snow, severity:4, score:0.5294, test acc:84.82%, time:1.4s (elapsed:272s, ETA:55s)
+[80/95] corruption:snow, severity:5, score:0.5268, test acc:83.66%, time:1.4s (elapsed:276s, ETA:52s)
+  >> snow avg | score:0.5327, test acc:86.87%
+[81/95] corruption:spatter, severity:1, score:0.5432, test acc:92.50%, time:1.4s (elapsed:279s, ETA:48s)
+[82/95] corruption:spatter, severity:2, score:0.5372, test acc:89.69%, time:1.4s (elapsed:282s, ETA:45s)
+[83/95] corruption:spatter, severity:3, score:0.5300, test acc:86.03%, time:1.4s (elapsed:286s, ETA:41s)
+[84/95] corruption:spatter, severity:4, score:0.5376, test acc:89.41%, time:1.4s (elapsed:289s, ETA:38s)
+[85/95] corruption:spatter, severity:5, score:0.5290, test acc:85.86%, time:1.4s (elapsed:293s, ETA:34s)
+  >> spatter avg | score:0.5354, test acc:88.70%
+[86/95] corruption:speckle_noise, severity:1, score:0.5361, test acc:88.37%, time:1.5s (elapsed:296s, ETA:31s)
+[87/95] corruption:speckle_noise, severity:2, score:0.5227, test acc:81.86%, time:1.4s (elapsed:300s, ETA:28s)
+[88/95] corruption:speckle_noise, severity:3, score:0.5169, test acc:78.69%, time:1.4s (elapsed:303s, ETA:24s)
+[89/95] corruption:speckle_noise, severity:4, score:0.5030, test acc:70.98%, time:1.4s (elapsed:307s, ETA:21s)
+[90/95] corruption:speckle_noise, severity:5, score:0.4901, test acc:63.85%, time:1.4s (elapsed:310s, ETA:17s)
+  >> speckle_noise avg | score:0.5138, test acc:76.75%
+[91/95] corruption:zoom_blur, severity:1, score:0.5411, test acc:91.69%, time:1.4s (elapsed:314s, ETA:14s)
+[92/95] corruption:zoom_blur, severity:2, score:0.5408, test acc:91.17%, time:1.4s (elapsed:317s, ETA:10s)
+[93/95] corruption:zoom_blur, severity:3, score:0.5375, test acc:90.06%, time:1.4s (elapsed:321s, ETA:7s)
+[94/95] corruption:zoom_blur, severity:4, score:0.5352, test acc:88.74%, time:1.4s (elapsed:324s, ETA:3s)
+[95/95] corruption:zoom_blur, severity:5, score:0.5305, test acc:86.37%, time:1.4s (elapsed:327s, ETA:0s)
+  >> zoom_blur avg | score:0.5370, test acc:89.61%
+======================================================================
+Mean scores:0.5280655553466396, time:1.4190158417350367
+Correlation:0.9952248268285061
+Spearman:0.9974628440839496
+Total wall time: 327.4s
+======================================================================
+[CIFAR-100] Evaluating resnet18...
+======================================================================
+alg:mano, dataname:cifar100, model:resnet18, device:cuda:2
+corruptions:19, severities:5, total_iters:95
+======================================================================
+[1/95] corruption:brightness, severity:1, score:0.2815, test acc:78.56%, time:1.9s (elapsed:4s, ETA:372s)
+[2/95] corruption:brightness, severity:2, score:0.2805, test acc:78.17%, time:1.4s (elapsed:7s, ETA:339s)
+[3/95] corruption:brightness, severity:3, score:0.2791, test acc:77.47%, time:1.5s (elapsed:11s, ETA:330s)
+[4/95] corruption:brightness, severity:4, score:0.2774, test acc:76.50%, time:1.7s (elapsed:14s, ETA:329s)
+[5/95] corruption:brightness, severity:5, score:0.2723, test acc:72.69%, time:1.4s (elapsed:18s, ETA:322s)
+  >> brightness avg | score:0.2782, test acc:76.68%
+[6/95] corruption:contrast, severity:1, score:0.2812, test acc:78.34%, time:1.4s (elapsed:22s, ETA:320s)
+[7/95] corruption:contrast, severity:2, score:0.2791, test acc:77.08%, time:1.4s (elapsed:25s, ETA:314s)
+[8/95] corruption:contrast, severity:3, score:0.2775, test acc:75.50%, time:1.4s (elapsed:29s, ETA:310s)
+[9/95] corruption:contrast, severity:4, score:0.2742, test acc:73.55%, time:1.4s (elapsed:32s, ETA:305s)
+[10/95] corruption:contrast, severity:5, score:0.2628, test acc:64.41%, time:1.4s (elapsed:35s, ETA:300s)
+  >> contrast avg | score:0.2750, test acc:73.78%
+[11/95] corruption:defocus_blur, severity:1, score:0.2811, test acc:78.54%, time:1.4s (elapsed:39s, ETA:296s)
+[12/95] corruption:defocus_blur, severity:2, score:0.2797, test acc:77.64%, time:1.4s (elapsed:42s, ETA:292s)
+[13/95] corruption:defocus_blur, severity:3, score:0.2764, test acc:75.39%, time:1.4s (elapsed:46s, ETA:287s)
+[14/95] corruption:defocus_blur, severity:4, score:0.2699, test acc:71.15%, time:1.5s (elapsed:49s, ETA:284s)
+[15/95] corruption:defocus_blur, severity:5, score:0.2561, test acc:61.98%, time:1.4s (elapsed:53s, ETA:281s)
+  >> defocus_blur avg | score:0.2727, test acc:72.94%
+[16/95] corruption:elastic_transform, severity:1, score:0.2703, test acc:71.18%, time:1.4s (elapsed:56s, ETA:277s)
+[17/95] corruption:elastic_transform, severity:2, score:0.2706, test acc:71.44%, time:1.4s (elapsed:60s, ETA:273s)
+[18/95] corruption:elastic_transform, severity:3, score:0.2670, test acc:69.36%, time:1.4s (elapsed:63s, ETA:270s)
+[19/95] corruption:elastic_transform, severity:4, score:0.2496, test acc:58.71%, time:1.4s (elapsed:66s, ETA:266s)
+[20/95] corruption:elastic_transform, severity:5, score:0.2308, test acc:46.95%, time:1.4s (elapsed:70s, ETA:262s)
+  >> elastic_transform avg | score:0.2577, test acc:63.53%
+[21/95] corruption:fog, severity:1, score:0.2807, test acc:78.65%, time:1.4s (elapsed:73s, ETA:258s)
+[22/95] corruption:fog, severity:2, score:0.2785, test acc:76.90%, time:1.4s (elapsed:77s, ETA:255s)
+[23/95] corruption:fog, severity:3, score:0.2747, test acc:74.62%, time:1.4s (elapsed:80s, ETA:251s)
+[24/95] corruption:fog, severity:4, score:0.2695, test acc:70.71%, time:1.4s (elapsed:84s, ETA:247s)
+[25/95] corruption:fog, severity:5, score:0.2536, test acc:61.31%, time:1.4s (elapsed:87s, ETA:244s)
+  >> fog avg | score:0.2714, test acc:72.44%
+[26/95] corruption:frost, severity:1, score:0.2733, test acc:73.69%, time:1.4s (elapsed:91s, ETA:240s)
+[27/95] corruption:frost, severity:2, score:0.2660, test acc:68.24%, time:1.4s (elapsed:94s, ETA:237s)
+[28/95] corruption:frost, severity:3, score:0.2579, test acc:62.38%, time:1.4s (elapsed:97s, ETA:233s)
+[29/95] corruption:frost, severity:4, score:0.2570, test acc:62.22%, time:1.4s (elapsed:101s, ETA:229s)
+[30/95] corruption:frost, severity:5, score:0.2487, test acc:56.17%, time:1.4s (elapsed:104s, ETA:226s)
+  >> frost avg | score:0.2606, test acc:64.54%
+[31/95] corruption:gaussian_blur, severity:1, score:0.2814, test acc:78.42%, time:1.4s (elapsed:108s, ETA:222s)
+[32/95] corruption:gaussian_blur, severity:2, score:0.2762, test acc:75.41%, time:1.4s (elapsed:111s, ETA:219s)
+[33/95] corruption:gaussian_blur, severity:3, score:0.2721, test acc:72.80%, time:1.4s (elapsed:114s, ETA:215s)
+[34/95] corruption:gaussian_blur, severity:4, score:0.2668, test acc:69.37%, time:1.4s (elapsed:118s, ETA:211s)
+[35/95] corruption:gaussian_blur, severity:5, score:0.2549, test acc:61.06%, time:1.4s (elapsed:121s, ETA:208s)
+  >> gaussian_blur avg | score:0.2703, test acc:71.41%
+[36/95] corruption:gaussian_noise, severity:1, score:0.2516, test acc:60.04%, time:1.4s (elapsed:125s, ETA:205s)
+[37/95] corruption:gaussian_noise, severity:2, score:0.2312, test acc:47.00%, time:1.4s (elapsed:128s, ETA:201s)
+[38/95] corruption:gaussian_noise, severity:3, score:0.2141, test acc:36.78%, time:1.4s (elapsed:132s, ETA:197s)
+[39/95] corruption:gaussian_noise, severity:4, score:0.2064, test acc:33.11%, time:1.4s (elapsed:135s, ETA:194s)
+[40/95] corruption:gaussian_noise, severity:5, score:0.1979, test acc:28.92%, time:1.4s (elapsed:139s, ETA:190s)
+  >> gaussian_noise avg | score:0.2202, test acc:41.17%
+[41/95] corruption:glass_blur, severity:1, score:0.2298, test acc:46.04%, time:1.4s (elapsed:142s, ETA:187s)
+[42/95] corruption:glass_blur, severity:2, score:0.2302, test acc:46.21%, time:1.4s (elapsed:145s, ETA:183s)
+[43/95] corruption:glass_blur, severity:3, score:0.2306, test acc:46.74%, time:1.4s (elapsed:149s, ETA:180s)
+[44/95] corruption:glass_blur, severity:4, score:0.2115, test acc:35.47%, time:1.4s (elapsed:152s, ETA:176s)
+[45/95] corruption:glass_blur, severity:5, score:0.2133, test acc:35.46%, time:1.4s (elapsed:156s, ETA:173s)
+  >> glass_blur avg | score:0.2231, test acc:41.98%
+[46/95] corruption:impulse_noise, severity:1, score:0.2603, test acc:65.46%, time:1.4s (elapsed:159s, ETA:170s)
+[47/95] corruption:impulse_noise, severity:2, score:0.2442, test acc:56.22%, time:1.5s (elapsed:163s, ETA:166s)
+[48/95] corruption:impulse_noise, severity:3, score:0.2310, test acc:47.20%, time:1.4s (elapsed:166s, ETA:163s)
+[49/95] corruption:impulse_noise, severity:4, score:0.2096, test acc:35.62%, time:1.4s (elapsed:170s, ETA:159s)
+[50/95] corruption:impulse_noise, severity:5, score:0.1950, test acc:27.12%, time:1.4s (elapsed:173s, ETA:156s)
+  >> impulse_noise avg | score:0.2280, test acc:46.32%
+[51/95] corruption:jpeg_compression, severity:1, score:0.2503, test acc:59.09%, time:1.4s (elapsed:176s, ETA:152s)
+[52/95] corruption:jpeg_compression, severity:2, score:0.2368, test acc:49.05%, time:1.4s (elapsed:180s, ETA:149s)
+[53/95] corruption:jpeg_compression, severity:3, score:0.2305, test acc:45.97%, time:1.4s (elapsed:183s, ETA:145s)
+[54/95] corruption:jpeg_compression, severity:4, score:0.2249, test acc:42.08%, time:1.4s (elapsed:187s, ETA:142s)
+[55/95] corruption:jpeg_compression, severity:5, score:0.2175, test acc:38.30%, time:1.4s (elapsed:190s, ETA:138s)
+  >> jpeg_compression avg | score:0.2320, test acc:46.90%
+[56/95] corruption:motion_blur, severity:1, score:0.2746, test acc:74.46%, time:1.4s (elapsed:194s, ETA:135s)
+[57/95] corruption:motion_blur, severity:2, score:0.2679, test acc:69.95%, time:1.4s (elapsed:197s, ETA:131s)
+[58/95] corruption:motion_blur, severity:3, score:0.2609, test acc:64.38%, time:1.4s (elapsed:200s, ETA:128s)
+[59/95] corruption:motion_blur, severity:4, score:0.2614, test acc:65.27%, time:1.4s (elapsed:204s, ETA:124s)
+[60/95] corruption:motion_blur, severity:5, score:0.2537, test acc:59.85%, time:1.4s (elapsed:207s, ETA:121s)
+  >> motion_blur avg | score:0.2637, test acc:66.78%
+[61/95] corruption:pixelate, severity:1, score:0.2753, test acc:75.15%, time:1.4s (elapsed:211s, ETA:118s)
+[62/95] corruption:pixelate, severity:2, score:0.2692, test acc:72.15%, time:1.4s (elapsed:214s, ETA:114s)
+[63/95] corruption:pixelate, severity:3, score:0.2666, test acc:69.98%, time:1.5s (elapsed:218s, ETA:111s)
+[64/95] corruption:pixelate, severity:4, score:0.2549, test acc:63.45%, time:1.4s (elapsed:221s, ETA:107s)
+[65/95] corruption:pixelate, severity:5, score:0.2393, test acc:51.81%, time:1.4s (elapsed:225s, ETA:104s)
+  >> pixelate avg | score:0.2611, test acc:66.51%
+[66/95] corruption:saturate, severity:1, score:0.2768, test acc:76.10%, time:1.4s (elapsed:228s, ETA:100s)
+[67/95] corruption:saturate, severity:2, score:0.2677, test acc:70.26%, time:1.4s (elapsed:232s, ETA:97s)
+[68/95] corruption:saturate, severity:3, score:0.2801, test acc:78.00%, time:1.4s (elapsed:235s, ETA:93s)
+[69/95] corruption:saturate, severity:4, score:0.2748, test acc:75.10%, time:1.5s (elapsed:238s, ETA:90s)
+[70/95] corruption:saturate, severity:5, score:0.2677, test acc:70.63%, time:1.4s (elapsed:242s, ETA:86s)
+  >> saturate avg | score:0.2734, test acc:74.02%
+[71/95] corruption:shot_noise, severity:1, score:0.2604, test acc:65.28%, time:1.4s (elapsed:245s, ETA:83s)
+[72/95] corruption:shot_noise, severity:2, score:0.2485, test acc:57.40%, time:1.4s (elapsed:249s, ETA:79s)
+[73/95] corruption:shot_noise, severity:3, score:0.2244, test acc:42.74%, time:1.4s (elapsed:252s, ETA:76s)
+[74/95] corruption:shot_noise, severity:4, score:0.2166, test acc:38.02%, time:1.4s (elapsed:256s, ETA:73s)
+[75/95] corruption:shot_noise, severity:5, score:0.2042, test acc:30.83%, time:1.4s (elapsed:259s, ETA:69s)
+  >> shot_noise avg | score:0.2308, test acc:46.85%
+[76/95] corruption:snow, severity:1, score:0.2720, test acc:72.31%, time:1.4s (elapsed:263s, ETA:66s)
+[77/95] corruption:snow, severity:2, score:0.2595, test acc:63.81%, time:1.4s (elapsed:266s, ETA:62s)
+[78/95] corruption:snow, severity:3, score:0.2603, test acc:64.70%, time:1.4s (elapsed:269s, ETA:59s)
+[79/95] corruption:snow, severity:4, score:0.2565, test acc:61.95%, time:1.4s (elapsed:273s, ETA:55s)
+[80/95] corruption:snow, severity:5, score:0.2519, test acc:57.35%, time:1.4s (elapsed:276s, ETA:52s)
+  >> snow avg | score:0.2600, test acc:64.02%
+[81/95] corruption:spatter, severity:1, score:0.2768, test acc:75.79%, time:1.4s (elapsed:280s, ETA:48s)
+[82/95] corruption:spatter, severity:2, score:0.2694, test acc:71.29%, time:1.4s (elapsed:283s, ETA:45s)
+[83/95] corruption:spatter, severity:3, score:0.2585, test acc:65.33%, time:1.4s (elapsed:287s, ETA:41s)
+[84/95] corruption:spatter, severity:4, score:0.2665, test acc:69.77%, time:1.4s (elapsed:290s, ETA:38s)
+[85/95] corruption:spatter, severity:5, score:0.2552, test acc:61.88%, time:1.4s (elapsed:293s, ETA:35s)
+  >> spatter avg | score:0.2653, test acc:68.81%
+[86/95] corruption:speckle_noise, severity:1, score:0.2596, test acc:65.41%, time:1.5s (elapsed:297s, ETA:31s)
+[87/95] corruption:speckle_noise, severity:2, score:0.2416, test acc:53.19%, time:1.4s (elapsed:301s, ETA:28s)
+[88/95] corruption:speckle_noise, severity:3, score:0.2330, test acc:47.51%, time:1.4s (elapsed:304s, ETA:24s)
+[89/95] corruption:speckle_noise, severity:4, score:0.2169, test acc:38.16%, time:1.4s (elapsed:307s, ETA:21s)
+[90/95] corruption:speckle_noise, severity:5, score:0.2036, test acc:31.20%, time:1.4s (elapsed:311s, ETA:17s)
+  >> speckle_noise avg | score:0.2310, test acc:47.09%
+[91/95] corruption:zoom_blur, severity:1, score:0.2735, test acc:74.30%, time:1.5s (elapsed:314s, ETA:14s)
+[92/95] corruption:zoom_blur, severity:2, score:0.2731, test acc:73.45%, time:1.4s (elapsed:318s, ETA:10s)
+[93/95] corruption:zoom_blur, severity:3, score:0.2695, test acc:71.64%, time:1.4s (elapsed:321s, ETA:7s)
+[94/95] corruption:zoom_blur, severity:4, score:0.2662, test acc:69.15%, time:1.4s (elapsed:325s, ETA:3s)
+[95/95] corruption:zoom_blur, severity:5, score:0.2602, test acc:65.71%, time:1.4s (elapsed:328s, ETA:0s)
+  >> zoom_blur avg | score:0.2685, test acc:70.85%
+======================================================================
+Mean scores:0.25488036682731224, time:1.4277244693354556
+Correlation:0.9965469003940753
+Spearman:0.9966825307950729
+Total wall time: 328.0s
+======================================================================
+[TinyImageNet] Evaluating resnet18...
+======================================================================
+alg:mano, dataname:tinyimagenet, model:resnet18, device:cuda:2
+corruptions:15, severities:5, total_iters:75
+======================================================================
+[1/75] corruption:brightness, severity:1, score:0.2200, test acc:62.35%, time:2.2s (elapsed:3s, ETA:258s)
+[2/75] corruption:brightness, severity:2, score:0.2179, test acc:61.03%, time:1.5s (elapsed:6s, ETA:229s)
+[3/75] corruption:brightness, severity:3, score:0.2134, test acc:58.30%, time:1.5s (elapsed:9s, ETA:219s)
+[4/75] corruption:brightness, severity:4, score:0.2082, test acc:53.10%, time:1.5s (elapsed:12s, ETA:212s)
+[5/75] corruption:brightness, severity:5, score:0.2003, test acc:47.89%, time:1.5s (elapsed:15s, ETA:207s)
+  >> brightness avg | score:0.2120, test acc:56.53%
+[6/75] corruption:contrast, severity:1, score:0.2049, test acc:50.40%, time:1.5s (elapsed:18s, ETA:202s)
+[7/75] corruption:contrast, severity:2, score:0.1972, test acc:44.49%, time:1.5s (elapsed:20s, ETA:198s)
+[8/75] corruption:contrast, severity:3, score:0.1838, test acc:34.58%, time:1.5s (elapsed:23s, ETA:195s)
+[9/75] corruption:contrast, severity:4, score:0.1589, test acc:16.30%, time:1.5s (elapsed:26s, ETA:191s)
+[10/75] corruption:contrast, severity:5, score:0.1444, test acc:5.62%, time:1.5s (elapsed:29s, ETA:187s)
+  >> contrast avg | score:0.1778, test acc:30.28%
+[11/75] corruption:defocus_blur, severity:1, score:0.2097, test acc:55.33%, time:1.5s (elapsed:32s, ETA:184s)
+[12/75] corruption:defocus_blur, severity:2, score:0.2050, test acc:52.36%, time:1.5s (elapsed:34s, ETA:181s)
+[13/75] corruption:defocus_blur, severity:3, score:0.1941, test acc:45.10%, time:1.5s (elapsed:37s, ETA:178s)
+[14/75] corruption:defocus_blur, severity:4, score:0.1711, test acc:28.01%, time:1.5s (elapsed:40s, ETA:175s)
+[15/75] corruption:defocus_blur, severity:5, score:0.1612, test acc:22.16%, time:1.6s (elapsed:43s, ETA:172s)
+  >> defocus_blur avg | score:0.1882, test acc:40.59%
+[16/75] corruption:elastic_transform, severity:1, score:0.2096, test acc:55.07%, time:1.5s (elapsed:46s, ETA:169s)
+[17/75] corruption:elastic_transform, severity:2, score:0.2109, test acc:56.77%, time:1.5s (elapsed:49s, ETA:166s)
+[18/75] corruption:elastic_transform, severity:3, score:0.2076, test acc:54.64%, time:1.5s (elapsed:52s, ETA:163s)
+[19/75] corruption:elastic_transform, severity:4, score:0.1959, test acc:47.04%, time:1.5s (elapsed:54s, ETA:160s)
+[20/75] corruption:elastic_transform, severity:5, score:0.1817, test acc:37.43%, time:1.6s (elapsed:57s, ETA:158s)
+  >> elastic_transform avg | score:0.2011, test acc:50.19%
+[21/75] corruption:fog, severity:1, score:0.2150, test acc:59.65%, time:1.5s (elapsed:60s, ETA:155s)
+[22/75] corruption:fog, severity:2, score:0.2092, test acc:56.03%, time:1.5s (elapsed:63s, ETA:152s)
+[23/75] corruption:fog, severity:3, score:0.2022, test acc:51.29%, time:1.5s (elapsed:66s, ETA:149s)
+[24/75] corruption:fog, severity:4, score:0.1889, test acc:42.57%, time:1.5s (elapsed:69s, ETA:146s)
+[25/75] corruption:fog, severity:5, score:0.1728, test acc:32.82%, time:1.5s (elapsed:72s, ETA:143s)
+  >> fog avg | score:0.1976, test acc:48.47%
+[26/75] corruption:frost, severity:1, score:0.2115, test acc:57.13%, time:1.5s (elapsed:74s, ETA:140s)
+[27/75] corruption:frost, severity:2, score:0.2046, test acc:52.41%, time:1.5s (elapsed:77s, ETA:137s)
+[28/75] corruption:frost, severity:3, score:0.1987, test acc:48.65%, time:1.6s (elapsed:80s, ETA:135s)
+[29/75] corruption:frost, severity:4, score:0.1935, test acc:44.94%, time:1.5s (elapsed:83s, ETA:132s)
+[30/75] corruption:frost, severity:5, score:0.1872, test acc:39.83%, time:1.5s (elapsed:86s, ETA:129s)
+  >> frost avg | score:0.1991, test acc:48.59%
+[31/75] corruption:gaussian_noise, severity:1, score:0.2115, test acc:57.93%, time:1.5s (elapsed:89s, ETA:126s)
+[32/75] corruption:gaussian_noise, severity:2, score:0.1908, test acc:43.46%, time:1.5s (elapsed:92s, ETA:123s)
+[33/75] corruption:gaussian_noise, severity:3, score:0.1675, test acc:30.34%, time:1.5s (elapsed:94s, ETA:120s)
+[34/75] corruption:gaussian_noise, severity:4, score:0.1538, test acc:22.67%, time:1.5s (elapsed:97s, ETA:117s)
+[35/75] corruption:gaussian_noise, severity:5, score:0.1431, test acc:16.93%, time:1.6s (elapsed:100s, ETA:115s)
+  >> gaussian_noise avg | score:0.1733, test acc:34.27%
+[36/75] corruption:glass_blur, severity:1, score:0.1973, test acc:46.55%, time:1.5s (elapsed:103s, ETA:112s)
+[37/75] corruption:glass_blur, severity:2, score:0.1896, test acc:41.41%, time:1.5s (elapsed:106s, ETA:109s)
+[38/75] corruption:glass_blur, severity:3, score:0.1744, test acc:30.99%, time:1.5s (elapsed:109s, ETA:106s)
+[39/75] corruption:glass_blur, severity:4, score:0.1559, test acc:19.50%, time:1.5s (elapsed:112s, ETA:103s)
+[40/75] corruption:glass_blur, severity:5, score:0.1427, test acc:12.51%, time:1.5s (elapsed:114s, ETA:100s)
+  >> glass_blur avg | score:0.1720, test acc:30.19%
+[41/75] corruption:impulse_noise, severity:1, score:0.2088, test acc:55.33%, time:1.5s (elapsed:117s, ETA:97s)
+[42/75] corruption:impulse_noise, severity:2, score:0.1989, test acc:48.54%, time:1.5s (elapsed:120s, ETA:94s)
+[43/75] corruption:impulse_noise, severity:3, score:0.1745, test acc:33.46%, time:1.5s (elapsed:123s, ETA:92s)
+[44/75] corruption:impulse_noise, severity:4, score:0.1580, test acc:23.25%, time:1.5s (elapsed:126s, ETA:89s)
+[45/75] corruption:impulse_noise, severity:5, score:0.1380, test acc:12.23%, time:1.5s (elapsed:129s, ETA:86s)
+  >> impulse_noise avg | score:0.1756, test acc:34.56%
+[46/75] corruption:jpeg_compression, severity:1, score:0.2112, test acc:56.92%, time:1.5s (elapsed:132s, ETA:83s)
+[47/75] corruption:jpeg_compression, severity:2, score:0.2085, test acc:55.63%, time:1.5s (elapsed:134s, ETA:80s)
+[48/75] corruption:jpeg_compression, severity:3, score:0.2053, test acc:53.36%, time:1.5s (elapsed:137s, ETA:77s)
+[49/75] corruption:jpeg_compression, severity:4, score:0.2009, test acc:50.14%, time:1.5s (elapsed:140s, ETA:74s)
+[50/75] corruption:jpeg_compression, severity:5, score:0.1879, test acc:40.62%, time:1.5s (elapsed:143s, ETA:71s)
+  >> jpeg_compression avg | score:0.2028, test acc:51.33%
+[51/75] corruption:motion_blur, severity:1, score:0.2110, test acc:57.07%, time:1.5s (elapsed:146s, ETA:69s)
+[52/75] corruption:motion_blur, severity:2, score:0.2050, test acc:52.60%, time:1.5s (elapsed:149s, ETA:66s)
+[53/75] corruption:motion_blur, severity:3, score:0.1979, test acc:47.29%, time:1.5s (elapsed:152s, ETA:63s)
+[54/75] corruption:motion_blur, severity:4, score:0.1913, test acc:42.57%, time:1.5s (elapsed:155s, ETA:60s)
+[55/75] corruption:motion_blur, severity:5, score:0.1848, test acc:37.87%, time:1.5s (elapsed:157s, ETA:57s)
+  >> motion_blur avg | score:0.1980, test acc:47.48%
+[56/75] corruption:pixelate, severity:1, score:0.2153, test acc:60.64%, time:1.5s (elapsed:160s, ETA:54s)
+[57/75] corruption:pixelate, severity:2, score:0.2109, test acc:57.51%, time:1.5s (elapsed:163s, ETA:51s)
+[58/75] corruption:pixelate, severity:3, score:0.2046, test acc:52.96%, time:1.5s (elapsed:166s, ETA:49s)
+[59/75] corruption:pixelate, severity:4, score:0.1971, test acc:48.15%, time:1.5s (elapsed:169s, ETA:46s)
+[60/75] corruption:pixelate, severity:5, score:0.1923, test acc:43.42%, time:1.5s (elapsed:172s, ETA:43s)
+  >> pixelate avg | score:0.2040, test acc:52.54%
+[61/75] corruption:shot_noise, severity:1, score:0.2112, test acc:57.59%, time:1.5s (elapsed:175s, ETA:40s)
+[62/75] corruption:shot_noise, severity:2, score:0.2002, test acc:49.46%, time:1.5s (elapsed:177s, ETA:37s)
+[63/75] corruption:shot_noise, severity:3, score:0.1853, test acc:40.95%, time:1.5s (elapsed:180s, ETA:34s)
+[64/75] corruption:shot_noise, severity:4, score:0.1701, test acc:31.91%, time:1.5s (elapsed:183s, ETA:31s)
+[65/75] corruption:shot_noise, severity:5, score:0.1513, test acc:20.78%, time:1.5s (elapsed:186s, ETA:29s)
+  >> shot_noise avg | score:0.1836, test acc:40.14%
+[66/75] corruption:snow, severity:1, score:0.2096, test acc:55.78%, time:1.5s (elapsed:189s, ETA:26s)
+[67/75] corruption:snow, severity:2, score:0.2009, test acc:50.00%, time:1.5s (elapsed:192s, ETA:23s)
+[68/75] corruption:snow, severity:3, score:0.1948, test acc:44.56%, time:1.5s (elapsed:195s, ETA:20s)
+[69/75] corruption:snow, severity:4, score:0.1839, test acc:36.79%, time:1.5s (elapsed:197s, ETA:17s)
+[70/75] corruption:snow, severity:5, score:0.1847, test acc:36.93%, time:1.5s (elapsed:200s, ETA:14s)
+  >> snow avg | score:0.1948, test acc:44.81%
+[71/75] corruption:zoom_blur, severity:1, score:0.2074, test acc:53.73%, time:1.5s (elapsed:203s, ETA:11s)
+[72/75] corruption:zoom_blur, severity:2, score:0.2022, test acc:49.53%, time:1.5s (elapsed:206s, ETA:9s)
+[73/75] corruption:zoom_blur, severity:3, score:0.1966, test acc:46.95%, time:1.5s (elapsed:209s, ETA:6s)
+[74/75] corruption:zoom_blur, severity:4, score:0.1897, test acc:42.40%, time:1.5s (elapsed:212s, ETA:3s)
+[75/75] corruption:zoom_blur, severity:5, score:0.1825, test acc:37.73%, time:1.5s (elapsed:215s, ETA:0s)
+  >> zoom_blur avg | score:0.1957, test acc:46.07%
+======================================================================
+Mean scores:0.19171575903892518, time:1.5155894756317139
+Correlation:0.9814823866754623
+Spearman:0.9947794421979738
+Total wall time: 214.6s
+======================================================================
+[CIFAR-10] Evaluating resnet50...
+======================================================================
+alg:mano, dataname:cifar10, model:resnet50, device:cuda:2
+corruptions:19, severities:5, total_iters:95
+======================================================================
+[1/95] corruption:brightness, severity:1, score:0.5536, test acc:95.58%, time:5.6s (elapsed:11s, ETA:1015s)
+[2/95] corruption:brightness, severity:2, score:0.5535, test acc:95.57%, time:4.8s (elapsed:21s, ETA:966s)
+[3/95] corruption:brightness, severity:3, score:0.5526, test acc:95.21%, time:4.8s (elapsed:31s, ETA:943s)
+[4/95] corruption:brightness, severity:4, score:0.5520, test acc:94.79%, time:4.8s (elapsed:41s, ETA:927s)
+[5/95] corruption:brightness, severity:5, score:0.5497, test acc:93.71%, time:4.8s (elapsed:51s, ETA:914s)
+  >> brightness avg | score:0.5523, test acc:94.97%
+[6/95] corruption:contrast, severity:1, score:0.5533, test acc:95.60%, time:4.9s (elapsed:61s, ETA:904s)
+[7/95] corruption:contrast, severity:2, score:0.5525, test acc:95.13%, time:4.8s (elapsed:71s, ETA:892s)
+[8/95] corruption:contrast, severity:3, score:0.5519, test acc:94.70%, time:4.8s (elapsed:81s, ETA:881s)
+[9/95] corruption:contrast, severity:4, score:0.5502, test acc:93.95%, time:4.9s (elapsed:91s, ETA:871s)
+[10/95] corruption:contrast, severity:5, score:0.5447, test acc:91.23%, time:4.9s (elapsed:101s, ETA:860s)
+  >> contrast avg | score:0.5505, test acc:94.12%
+[11/95] corruption:defocus_blur, severity:1, score:0.5530, test acc:95.37%, time:4.9s (elapsed:111s, ETA:850s)
+[12/95] corruption:defocus_blur, severity:2, score:0.5528, test acc:94.78%, time:4.9s (elapsed:121s, ETA:840s)
+[13/95] corruption:defocus_blur, severity:3, score:0.5502, test acc:93.79%, time:4.9s (elapsed:132s, ETA:830s)
+[14/95] corruption:defocus_blur, severity:4, score:0.5471, test acc:91.97%, time:4.9s (elapsed:142s, ETA:819s)
+[15/95] corruption:defocus_blur, severity:5, score:0.5379, test acc:86.98%, time:4.8s (elapsed:152s, ETA:809s)
+  >> defocus_blur avg | score:0.5482, test acc:92.58%
+[16/95] corruption:elastic_transform, severity:1, score:0.5478, test acc:92.78%, time:4.9s (elapsed:162s, ETA:799s)
+[17/95] corruption:elastic_transform, severity:2, score:0.5481, test acc:92.78%, time:4.8s (elapsed:172s, ETA:788s)
+[18/95] corruption:elastic_transform, severity:3, score:0.5457, test acc:91.38%, time:4.9s (elapsed:182s, ETA:778s)
+[19/95] corruption:elastic_transform, severity:4, score:0.5351, test acc:85.45%, time:4.9s (elapsed:192s, ETA:768s)
+[20/95] corruption:elastic_transform, severity:5, score:0.5219, test acc:78.24%, time:4.9s (elapsed:202s, ETA:758s)
+  >> elastic_transform avg | score:0.5397, test acc:88.13%
+[21/95] corruption:fog, severity:1, score:0.5538, test acc:95.66%, time:4.9s (elapsed:212s, ETA:748s)
+[22/95] corruption:fog, severity:2, score:0.5524, test acc:94.96%, time:4.9s (elapsed:222s, ETA:738s)
+[23/95] corruption:fog, severity:3, score:0.5512, test acc:94.46%, time:4.9s (elapsed:232s, ETA:728s)
+[24/95] corruption:fog, severity:4, score:0.5484, test acc:92.85%, time:4.9s (elapsed:243s, ETA:718s)
+[25/95] corruption:fog, severity:5, score:0.5396, test acc:87.89%, time:4.9s (elapsed:253s, ETA:708s)
+  >> fog avg | score:0.5491, test acc:93.16%
+[26/95] corruption:frost, severity:1, score:0.5504, test acc:93.83%, time:4.9s (elapsed:263s, ETA:698s)
+[27/95] corruption:frost, severity:2, score:0.5460, test acc:91.32%, time:4.8s (elapsed:273s, ETA:687s)
+[28/95] corruption:frost, severity:3, score:0.5417, test acc:88.54%, time:4.9s (elapsed:283s, ETA:677s)
+[29/95] corruption:frost, severity:4, score:0.5414, test acc:87.66%, time:4.9s (elapsed:293s, ETA:667s)
+[30/95] corruption:frost, severity:5, score:0.5354, test acc:84.62%, time:4.9s (elapsed:303s, ETA:657s)
+  >> frost avg | score:0.5430, test acc:89.19%
+[31/95] corruption:gaussian_blur, severity:1, score:0.5532, test acc:95.21%, time:4.9s (elapsed:313s, ETA:647s)
+[32/95] corruption:gaussian_blur, severity:2, score:0.5506, test acc:93.74%, time:4.9s (elapsed:323s, ETA:636s)
+[33/95] corruption:gaussian_blur, severity:3, score:0.5482, test acc:92.60%, time:4.9s (elapsed:333s, ETA:626s)
+[34/95] corruption:gaussian_blur, severity:4, score:0.5453, test acc:90.99%, time:4.9s (elapsed:343s, ETA:616s)
+[35/95] corruption:gaussian_blur, severity:5, score:0.5382, test acc:86.77%, time:4.9s (elapsed:354s, ETA:606s)
+  >> gaussian_blur avg | score:0.5471, test acc:91.86%
+[36/95] corruption:gaussian_noise, severity:1, score:0.5395, test acc:87.12%, time:4.9s (elapsed:364s, ETA:596s)
+[37/95] corruption:gaussian_noise, severity:2, score:0.5255, test acc:78.50%, time:4.9s (elapsed:374s, ETA:586s)
+[38/95] corruption:gaussian_noise, severity:3, score:0.5117, test acc:70.01%, time:4.8s (elapsed:384s, ETA:576s)
+[39/95] corruption:gaussian_noise, severity:4, score:0.5047, test acc:66.28%, time:4.9s (elapsed:394s, ETA:566s)
+[40/95] corruption:gaussian_noise, severity:5, score:0.4975, test acc:61.54%, time:4.9s (elapsed:404s, ETA:555s)
+  >> gaussian_noise avg | score:0.5158, test acc:72.69%
+[41/95] corruption:glass_blur, severity:1, score:0.5225, test acc:79.07%, time:4.8s (elapsed:414s, ETA:545s)
+[42/95] corruption:glass_blur, severity:2, score:0.5238, test acc:79.42%, time:4.9s (elapsed:424s, ETA:535s)
+[43/95] corruption:glass_blur, severity:3, score:0.5247, test acc:79.49%, time:4.9s (elapsed:434s, ETA:525s)
+[44/95] corruption:glass_blur, severity:4, score:0.5044, test acc:68.75%, time:4.9s (elapsed:444s, ETA:515s)
+[45/95] corruption:glass_blur, severity:5, score:0.5056, test acc:69.51%, time:4.9s (elapsed:454s, ETA:505s)
+  >> glass_blur avg | score:0.5162, test acc:75.25%
+[46/95] corruption:impulse_noise, severity:1, score:0.5444, test acc:90.72%, time:4.8s (elapsed:465s, ETA:495s)
+[47/95] corruption:impulse_noise, severity:2, score:0.5362, test acc:85.32%, time:4.9s (elapsed:475s, ETA:485s)
+[48/95] corruption:impulse_noise, severity:3, score:0.5291, test acc:80.30%, time:4.9s (elapsed:485s, ETA:475s)
+[49/95] corruption:impulse_noise, severity:4, score:0.5126, test acc:70.69%, time:4.9s (elapsed:495s, ETA:465s)
+[50/95] corruption:impulse_noise, severity:5, score:0.4976, test acc:61.59%, time:4.9s (elapsed:505s, ETA:454s)
+  >> impulse_noise avg | score:0.5240, test acc:77.72%
+[51/95] corruption:jpeg_compression, severity:1, score:0.5369, test acc:85.65%, time:4.8s (elapsed:515s, ETA:444s)
+[52/95] corruption:jpeg_compression, severity:2, score:0.5267, test acc:79.54%, time:4.9s (elapsed:525s, ETA:434s)
+[53/95] corruption:jpeg_compression, severity:3, score:0.5227, test acc:76.62%, time:4.8s (elapsed:535s, ETA:424s)
+[54/95] corruption:jpeg_compression, severity:4, score:0.5182, test acc:73.49%, time:4.8s (elapsed:545s, ETA:414s)
+[55/95] corruption:jpeg_compression, severity:5, score:0.5113, test acc:70.33%, time:4.9s (elapsed:555s, ETA:404s)
+  >> jpeg_compression avg | score:0.5232, test acc:77.13%
+[56/95] corruption:motion_blur, severity:1, score:0.5498, test acc:93.54%, time:4.9s (elapsed:565s, ETA:394s)
+[57/95] corruption:motion_blur, severity:2, score:0.5455, test acc:91.28%, time:4.9s (elapsed:576s, ETA:384s)
+[58/95] corruption:motion_blur, severity:3, score:0.5414, test acc:88.62%, time:4.9s (elapsed:586s, ETA:374s)
+[59/95] corruption:motion_blur, severity:4, score:0.5407, test acc:88.66%, time:4.9s (elapsed:596s, ETA:363s)
+[60/95] corruption:motion_blur, severity:5, score:0.5350, test acc:85.23%, time:4.9s (elapsed:606s, ETA:353s)
+  >> motion_blur avg | score:0.5425, test acc:89.47%
+[61/95] corruption:pixelate, severity:1, score:0.5503, test acc:94.29%, time:4.9s (elapsed:616s, ETA:343s)
+[62/95] corruption:pixelate, severity:2, score:0.5480, test acc:92.80%, time:4.9s (elapsed:626s, ETA:333s)
+[63/95] corruption:pixelate, severity:3, score:0.5469, test acc:91.93%, time:4.8s (elapsed:636s, ETA:323s)
+[64/95] corruption:pixelate, severity:4, score:0.5405, test acc:88.74%, time:4.8s (elapsed:646s, ETA:313s)
+[65/95] corruption:pixelate, severity:5, score:0.5303, test acc:83.02%, time:4.8s (elapsed:656s, ETA:303s)
+  >> pixelate avg | score:0.5432, test acc:90.16%
+[66/95] corruption:saturate, severity:1, score:0.5525, test acc:95.00%, time:4.9s (elapsed:666s, ETA:293s)
+[67/95] corruption:saturate, severity:2, score:0.5508, test acc:94.26%, time:4.8s (elapsed:676s, ETA:283s)
+[68/95] corruption:saturate, severity:3, score:0.5533, test acc:95.51%, time:4.9s (elapsed:686s, ETA:272s)
+[69/95] corruption:saturate, severity:4, score:0.5514, test acc:94.49%, time:4.9s (elapsed:696s, ETA:262s)
+[70/95] corruption:saturate, severity:5, score:0.5484, test acc:92.98%, time:4.8s (elapsed:706s, ETA:252s)
+  >> saturate avg | score:0.5513, test acc:94.45%
+[71/95] corruption:shot_noise, severity:1, score:0.5457, test acc:90.78%, time:4.9s (elapsed:716s, ETA:242s)
+[72/95] corruption:shot_noise, severity:2, score:0.5384, test acc:86.77%, time:4.9s (elapsed:726s, ETA:232s)
+[73/95] corruption:shot_noise, severity:3, score:0.5236, test acc:76.28%, time:4.9s (elapsed:737s, ETA:222s)
+[74/95] corruption:shot_noise, severity:4, score:0.5153, test acc:72.74%, time:4.9s (elapsed:747s, ETA:212s)
+[75/95] corruption:shot_noise, severity:5, score:0.5038, test acc:65.30%, time:4.9s (elapsed:757s, ETA:202s)
+  >> shot_noise avg | score:0.5254, test acc:78.37%
+[76/95] corruption:snow, severity:1, score:0.5495, test acc:93.48%, time:4.9s (elapsed:767s, ETA:192s)
+[77/95] corruption:snow, severity:2, score:0.5431, test acc:89.08%, time:4.9s (elapsed:777s, ETA:182s)
+[78/95] corruption:snow, severity:3, score:0.5427, test acc:89.49%, time:4.9s (elapsed:787s, ETA:172s)
+[79/95] corruption:snow, severity:4, score:0.5388, test acc:87.46%, time:4.9s (elapsed:797s, ETA:161s)
+[80/95] corruption:snow, severity:5, score:0.5368, test acc:85.76%, time:4.9s (elapsed:807s, ETA:151s)
+  >> snow avg | score:0.5422, test acc:89.05%
+[81/95] corruption:spatter, severity:1, score:0.5515, test acc:94.48%, time:4.9s (elapsed:817s, ETA:141s)
+[82/95] corruption:spatter, severity:2, score:0.5475, test acc:92.51%, time:4.9s (elapsed:828s, ETA:131s)
+[83/95] corruption:spatter, severity:3, score:0.5407, test acc:89.23%, time:4.9s (elapsed:838s, ETA:121s)
+[84/95] corruption:spatter, severity:4, score:0.5474, test acc:92.09%, time:4.9s (elapsed:848s, ETA:111s)
+[85/95] corruption:spatter, severity:5, score:0.5412, test acc:88.41%, time:4.9s (elapsed:858s, ETA:101s)
+  >> spatter avg | score:0.5457, test acc:91.34%
+[86/95] corruption:speckle_noise, severity:1, score:0.5452, test acc:90.78%, time:4.9s (elapsed:868s, ETA:91s)
+[87/95] corruption:speckle_noise, severity:2, score:0.5350, test acc:84.71%, time:4.9s (elapsed:878s, ETA:81s)
+[88/95] corruption:speckle_noise, severity:3, score:0.5294, test acc:80.73%, time:4.9s (elapsed:888s, ETA:71s)
+[89/95] corruption:speckle_noise, severity:4, score:0.5173, test acc:73.05%, time:4.9s (elapsed:898s, ETA:61s)
+[90/95] corruption:speckle_noise, severity:5, score:0.5034, test acc:65.45%, time:4.9s (elapsed:908s, ETA:50s)
+  >> speckle_noise avg | score:0.5261, test acc:78.94%
+[91/95] corruption:zoom_blur, severity:1, score:0.5491, test acc:93.48%, time:4.9s (elapsed:918s, ETA:40s)
+[92/95] corruption:zoom_blur, severity:2, score:0.5489, test acc:93.34%, time:4.9s (elapsed:928s, ETA:30s)
+[93/95] corruption:zoom_blur, severity:3, score:0.5471, test acc:92.34%, time:4.8s (elapsed:938s, ETA:20s)
+[94/95] corruption:zoom_blur, severity:4, score:0.5451, test acc:91.43%, time:4.9s (elapsed:948s, ETA:10s)
+[95/95] corruption:zoom_blur, severity:5, score:0.5419, test acc:89.40%, time:4.9s (elapsed:958s, ETA:0s)
+  >> zoom_blur avg | score:0.5464, test acc:92.00%
+======================================================================
+Mean scores:0.5385095339072378, time:4.8748552623548
+Correlation:0.994878311817702
+Spearman:0.9974418646869936
+Total wall time: 958.5s
+======================================================================
+[CIFAR-100] Evaluating resnet50...
+======================================================================
+alg:mano, dataname:cifar100, model:resnet50, device:cuda:2
+corruptions:19, severities:5, total_iters:95
+======================================================================
+[1/95] corruption:brightness, severity:1, score:0.2935, test acc:81.65%, time:5.6s (elapsed:11s, ETA:1007s)
+[2/95] corruption:brightness, severity:2, score:0.2930, test acc:81.33%, time:4.9s (elapsed:21s, ETA:964s)
+[3/95] corruption:brightness, severity:3, score:0.2915, test acc:80.64%, time:4.9s (elapsed:31s, ETA:943s)
+[4/95] corruption:brightness, severity:4, score:0.2899, test acc:79.03%, time:5.1s (elapsed:41s, ETA:933s)
+[5/95] corruption:brightness, severity:5, score:0.2860, test acc:75.83%, time:4.8s (elapsed:51s, ETA:919s)
+  >> brightness avg | score:0.2908, test acc:79.70%
+[6/95] corruption:contrast, severity:1, score:0.2929, test acc:81.31%, time:4.9s (elapsed:61s, ETA:907s)
+[7/95] corruption:contrast, severity:2, score:0.2915, test acc:79.77%, time:4.8s (elapsed:71s, ETA:895s)
+[8/95] corruption:contrast, severity:3, score:0.2898, test acc:78.52%, time:4.9s (elapsed:81s, ETA:884s)
+[9/95] corruption:contrast, severity:4, score:0.2876, test acc:76.74%, time:4.8s (elapsed:91s, ETA:872s)
+[10/95] corruption:contrast, severity:5, score:0.2793, test acc:69.62%, time:4.8s (elapsed:101s, ETA:861s)
+  >> contrast avg | score:0.2882, test acc:77.19%
+[11/95] corruption:defocus_blur, severity:1, score:0.2927, test acc:81.32%, time:4.8s (elapsed:111s, ETA:851s)
+[12/95] corruption:defocus_blur, severity:2, score:0.2924, test acc:80.41%, time:4.9s (elapsed:121s, ETA:840s)
+[13/95] corruption:defocus_blur, severity:3, score:0.2893, test acc:78.56%, time:4.9s (elapsed:132s, ETA:830s)
+[14/95] corruption:defocus_blur, severity:4, score:0.2838, test acc:74.32%, time:4.8s (elapsed:142s, ETA:819s)
+[15/95] corruption:defocus_blur, severity:5, score:0.2737, test acc:65.92%, time:4.8s (elapsed:152s, ETA:808s)
+  >> defocus_blur avg | score:0.2864, test acc:76.11%
+[16/95] corruption:elastic_transform, severity:1, score:0.2838, test acc:75.01%, time:4.8s (elapsed:162s, ETA:798s)
+[17/95] corruption:elastic_transform, severity:2, score:0.2855, test acc:75.41%, time:4.9s (elapsed:172s, ETA:788s)
+[18/95] corruption:elastic_transform, severity:3, score:0.2814, test acc:72.32%, time:4.9s (elapsed:182s, ETA:777s)
+[19/95] corruption:elastic_transform, severity:4, score:0.2655, test acc:61.77%, time:4.9s (elapsed:192s, ETA:767s)
+[20/95] corruption:elastic_transform, severity:5, score:0.2485, test acc:50.28%, time:4.9s (elapsed:202s, ETA:757s)
+  >> elastic_transform avg | score:0.2729, test acc:66.96%
+[21/95] corruption:fog, severity:1, score:0.2929, test acc:81.29%, time:4.8s (elapsed:212s, ETA:747s)
+[22/95] corruption:fog, severity:2, score:0.2908, test acc:79.36%, time:4.9s (elapsed:222s, ETA:736s)
+[23/95] corruption:fog, severity:3, score:0.2877, test acc:77.09%, time:4.9s (elapsed:232s, ETA:726s)
+[24/95] corruption:fog, severity:4, score:0.2825, test acc:73.88%, time:4.9s (elapsed:242s, ETA:716s)
+[25/95] corruption:fog, severity:5, score:0.2678, test acc:62.89%, time:4.9s (elapsed:252s, ETA:706s)
+  >> fog avg | score:0.2844, test acc:74.90%
+[26/95] corruption:frost, severity:1, score:0.2870, test acc:76.79%, time:4.8s (elapsed:262s, ETA:696s)
+[27/95] corruption:frost, severity:2, score:0.2795, test acc:71.35%, time:4.8s (elapsed:272s, ETA:686s)
+[28/95] corruption:frost, severity:3, score:0.2725, test acc:64.55%, time:4.8s (elapsed:282s, ETA:675s)
+[29/95] corruption:frost, severity:4, score:0.2718, test acc:64.99%, time:4.8s (elapsed:292s, ETA:665s)
+[30/95] corruption:frost, severity:5, score:0.2635, test acc:59.39%, time:4.9s (elapsed:302s, ETA:655s)
+  >> frost avg | score:0.2749, test acc:67.41%
+[31/95] corruption:gaussian_blur, severity:1, score:0.2930, test acc:81.56%, time:4.9s (elapsed:312s, ETA:645s)
+[32/95] corruption:gaussian_blur, severity:2, score:0.2897, test acc:78.59%, time:4.9s (elapsed:322s, ETA:635s)
+[33/95] corruption:gaussian_blur, severity:3, score:0.2860, test acc:75.67%, time:4.8s (elapsed:332s, ETA:625s)
+[34/95] corruption:gaussian_blur, severity:4, score:0.2823, test acc:73.09%, time:4.9s (elapsed:343s, ETA:615s)
+[35/95] corruption:gaussian_blur, severity:5, score:0.2737, test acc:65.94%, time:4.9s (elapsed:353s, ETA:604s)
+  >> gaussian_blur avg | score:0.2850, test acc:74.97%
+[36/95] corruption:gaussian_noise, severity:1, score:0.2670, test acc:62.57%, time:4.9s (elapsed:363s, ETA:594s)
+[37/95] corruption:gaussian_noise, severity:2, score:0.2476, test acc:48.49%, time:4.9s (elapsed:373s, ETA:584s)
+[38/95] corruption:gaussian_noise, severity:3, score:0.2294, test acc:38.61%, time:4.8s (elapsed:383s, ETA:574s)
+[39/95] corruption:gaussian_noise, severity:4, score:0.2212, test acc:34.62%, time:4.9s (elapsed:393s, ETA:564s)
+[40/95] corruption:gaussian_noise, severity:5, score:0.2125, test acc:30.45%, time:4.9s (elapsed:403s, ETA:554s)
+  >> gaussian_noise avg | score:0.2355, test acc:42.95%
+[41/95] corruption:glass_blur, severity:1, score:0.2500, test acc:50.40%, time:4.9s (elapsed:413s, ETA:544s)
+[42/95] corruption:glass_blur, severity:2, score:0.2501, test acc:51.06%, time:4.9s (elapsed:423s, ETA:534s)
+[43/95] corruption:glass_blur, severity:3, score:0.2512, test acc:50.63%, time:4.9s (elapsed:433s, ETA:524s)
+[44/95] corruption:glass_blur, severity:4, score:0.2296, test acc:38.56%, time:4.9s (elapsed:443s, ETA:514s)
+[45/95] corruption:glass_blur, severity:5, score:0.2314, test acc:39.32%, time:4.9s (elapsed:453s, ETA:504s)
+  >> glass_blur avg | score:0.2424, test acc:45.99%
+[46/95] corruption:impulse_noise, severity:1, score:0.2780, test acc:70.58%, time:4.9s (elapsed:464s, ETA:494s)
+[47/95] corruption:impulse_noise, severity:2, score:0.2641, test acc:62.10%, time:4.8s (elapsed:474s, ETA:484s)
+[48/95] corruption:impulse_noise, severity:3, score:0.2522, test acc:52.47%, time:4.8s (elapsed:484s, ETA:474s)
+[49/95] corruption:impulse_noise, severity:4, score:0.2295, test acc:39.89%, time:4.9s (elapsed:494s, ETA:464s)
+[50/95] corruption:impulse_noise, severity:5, score:0.2117, test acc:30.54%, time:4.9s (elapsed:504s, ETA:453s)
+  >> impulse_noise avg | score:0.2471, test acc:51.12%
+[51/95] corruption:jpeg_compression, severity:1, score:0.2645, test acc:60.79%, time:4.9s (elapsed:514s, ETA:443s)
+[52/95] corruption:jpeg_compression, severity:2, score:0.2508, test acc:50.58%, time:4.9s (elapsed:524s, ETA:433s)
+[53/95] corruption:jpeg_compression, severity:3, score:0.2461, test acc:47.63%, time:4.9s (elapsed:534s, ETA:423s)
+[54/95] corruption:jpeg_compression, severity:4, score:0.2403, test acc:44.37%, time:4.9s (elapsed:544s, ETA:413s)
+[55/95] corruption:jpeg_compression, severity:5, score:0.2335, test acc:39.27%, time:4.9s (elapsed:554s, ETA:403s)
+  >> jpeg_compression avg | score:0.2470, test acc:48.53%
+[56/95] corruption:motion_blur, severity:1, score:0.2881, test acc:77.01%, time:4.9s (elapsed:564s, ETA:393s)
+[57/95] corruption:motion_blur, severity:2, score:0.2829, test acc:72.64%, time:4.8s (elapsed:574s, ETA:383s)
+[58/95] corruption:motion_blur, severity:3, score:0.2767, test acc:67.05%, time:4.9s (elapsed:585s, ETA:373s)
+[59/95] corruption:motion_blur, severity:4, score:0.2765, test acc:67.56%, time:4.9s (elapsed:595s, ETA:363s)
+[60/95] corruption:motion_blur, severity:5, score:0.2696, test acc:62.74%, time:4.9s (elapsed:605s, ETA:353s)
+  >> motion_blur avg | score:0.2788, test acc:69.40%
+[61/95] corruption:pixelate, severity:1, score:0.2880, test acc:77.69%, time:4.9s (elapsed:615s, ETA:343s)
+[62/95] corruption:pixelate, severity:2, score:0.2837, test acc:74.07%, time:4.8s (elapsed:625s, ETA:333s)
+[63/95] corruption:pixelate, severity:3, score:0.2809, test acc:72.56%, time:4.9s (elapsed:635s, ETA:322s)
+[64/95] corruption:pixelate, severity:4, score:0.2727, test acc:66.49%, time:4.9s (elapsed:645s, ETA:312s)
+[65/95] corruption:pixelate, severity:5, score:0.2593, test acc:56.64%, time:4.9s (elapsed:655s, ETA:302s)
+  >> pixelate avg | score:0.2769, test acc:69.49%
+[66/95] corruption:saturate, severity:1, score:0.2893, test acc:78.88%, time:4.9s (elapsed:665s, ETA:292s)
+[67/95] corruption:saturate, severity:2, score:0.2845, test acc:75.72%, time:4.9s (elapsed:675s, ETA:282s)
+[68/95] corruption:saturate, severity:3, score:0.2921, test acc:81.07%, time:4.9s (elapsed:685s, ETA:272s)
+[69/95] corruption:saturate, severity:4, score:0.2879, test acc:77.81%, time:4.9s (elapsed:695s, ETA:262s)
+[70/95] corruption:saturate, severity:5, score:0.2815, test acc:72.75%, time:4.9s (elapsed:705s, ETA:252s)
+  >> saturate avg | score:0.2871, test acc:77.25%
+[71/95] corruption:shot_noise, severity:1, score:0.2764, test acc:69.44%, time:4.9s (elapsed:716s, ETA:242s)
+[72/95] corruption:shot_noise, severity:2, score:0.2650, test acc:60.89%, time:4.9s (elapsed:726s, ETA:232s)
+[73/95] corruption:shot_noise, severity:3, score:0.2417, test acc:45.79%, time:4.9s (elapsed:736s, ETA:222s)
+[74/95] corruption:shot_noise, severity:4, score:0.2316, test acc:39.57%, time:4.9s (elapsed:746s, ETA:212s)
+[75/95] corruption:shot_noise, severity:5, score:0.2177, test acc:32.42%, time:4.9s (elapsed:756s, ETA:202s)
+  >> shot_noise avg | score:0.2465, test acc:49.62%
+[76/95] corruption:snow, severity:1, score:0.2862, test acc:76.08%, time:4.9s (elapsed:766s, ETA:192s)
+[77/95] corruption:snow, severity:2, score:0.2740, test acc:66.89%, time:4.9s (elapsed:777s, ETA:182s)
+[78/95] corruption:snow, severity:3, score:0.2748, test acc:68.20%, time:4.9s (elapsed:787s, ETA:171s)
+[79/95] corruption:snow, severity:4, score:0.2714, test acc:64.58%, time:4.9s (elapsed:797s, ETA:161s)
+[80/95] corruption:snow, severity:5, score:0.2676, test acc:60.92%, time:4.9s (elapsed:826s, ETA:155s)
+  >> snow avg | score:0.2748, test acc:67.33%
+[81/95] corruption:spatter, severity:1, score:0.2894, test acc:79.13%, time:4.9s (elapsed:837s, ETA:145s)
+[82/95] corruption:spatter, severity:2, score:0.2833, test acc:74.26%, time:4.9s (elapsed:847s, ETA:134s)
+[83/95] corruption:spatter, severity:3, score:0.2742, test acc:67.88%, time:4.9s (elapsed:857s, ETA:124s)
+[84/95] corruption:spatter, severity:4, score:0.2832, test acc:74.41%, time:4.9s (elapsed:867s, ETA:114s)
+[85/95] corruption:spatter, severity:5, score:0.2736, test acc:67.97%, time:4.9s (elapsed:877s, ETA:103s)
+  >> spatter avg | score:0.2807, test acc:72.73%
+[86/95] corruption:speckle_noise, severity:1, score:0.2766, test acc:69.29%, time:4.9s (elapsed:887s, ETA:93s)
+[87/95] corruption:speckle_noise, severity:2, score:0.2594, test acc:56.95%, time:4.9s (elapsed:898s, ETA:83s)
+[88/95] corruption:speckle_noise, severity:3, score:0.2507, test acc:50.99%, time:4.9s (elapsed:908s, ETA:72s)
+[89/95] corruption:speckle_noise, severity:4, score:0.2342, test acc:40.83%, time:4.9s (elapsed:918s, ETA:62s)
+[90/95] corruption:speckle_noise, severity:5, score:0.2199, test acc:33.12%, time:4.9s (elapsed:928s, ETA:52s)
+  >> speckle_noise avg | score:0.2482, test acc:50.24%
+[91/95] corruption:zoom_blur, severity:1, score:0.2878, test acc:77.07%, time:4.9s (elapsed:938s, ETA:41s)
+[92/95] corruption:zoom_blur, severity:2, score:0.2870, test acc:76.28%, time:4.9s (elapsed:948s, ETA:31s)
+[93/95] corruption:zoom_blur, severity:3, score:0.2846, test acc:74.71%, time:4.9s (elapsed:959s, ETA:21s)
+[94/95] corruption:zoom_blur, severity:4, score:0.2819, test acc:72.44%, time:4.9s (elapsed:969s, ETA:10s)
+[95/95] corruption:zoom_blur, severity:5, score:0.2778, test acc:69.57%, time:4.9s (elapsed:979s, ETA:0s)
+  >> zoom_blur avg | score:0.2838, test acc:74.01%
+======================================================================
+Mean scores:0.2700726258127313, time:4.87781306567945
+Correlation:0.9934150540299623
+Spearman:0.9976623740201568
+Total wall time: 978.8s
+======================================================================
+[TinyImageNet] Evaluating resnet50...
+======================================================================
+alg:mano, dataname:tinyimagenet, model:resnet50, device:cuda:2
+corruptions:15, severities:5, total_iters:75
+======================================================================
+[1/75] corruption:brightness, severity:1, score:0.2338, test acc:69.31%, time:5.8s (elapsed:10s, ETA:760s)
+[2/75] corruption:brightness, severity:2, score:0.2317, test acc:67.44%, time:4.9s (elapsed:20s, ETA:717s)
+[3/75] corruption:brightness, severity:3, score:0.2278, test acc:64.07%, time:4.9s (elapsed:29s, ETA:698s)
+[4/75] corruption:brightness, severity:4, score:0.2221, test acc:59.27%, time:4.9s (elapsed:39s, ETA:684s)
+[5/75] corruption:brightness, severity:5, score:0.2147, test acc:52.77%, time:4.9s (elapsed:48s, ETA:671s)
+  >> brightness avg | score:0.2260, test acc:62.57%
+[6/75] corruption:contrast, severity:1, score:0.2195, test acc:57.07%, time:4.9s (elapsed:57s, ETA:659s)
+[7/75] corruption:contrast, severity:2, score:0.2112, test acc:50.91%, time:4.9s (elapsed:67s, ETA:649s)
+[8/75] corruption:contrast, severity:3, score:0.1968, test acc:40.26%, time:5.0s (elapsed:76s, ETA:639s)
+[9/75] corruption:contrast, severity:4, score:0.1707, test acc:21.44%, time:4.9s (elapsed:86s, ETA:629s)
+[10/75] corruption:contrast, severity:5, score:0.1504, test acc:8.14%, time:4.9s (elapsed:95s, ETA:619s)
+  >> contrast avg | score:0.1897, test acc:35.56%
+[11/75] corruption:defocus_blur, severity:1, score:0.2243, test acc:61.56%, time:4.9s (elapsed:105s, ETA:609s)
+[12/75] corruption:defocus_blur, severity:2, score:0.2196, test acc:58.70%, time:4.9s (elapsed:114s, ETA:599s)
+[13/75] corruption:defocus_blur, severity:3, score:0.2089, test acc:50.01%, time:4.9s (elapsed:124s, ETA:590s)
+[14/75] corruption:defocus_blur, severity:4, score:0.1831, test acc:32.23%, time:5.0s (elapsed:133s, ETA:580s)
+[15/75] corruption:defocus_blur, severity:5, score:0.1730, test acc:27.00%, time:4.9s (elapsed:143s, ETA:571s)
+  >> defocus_blur avg | score:0.2018, test acc:45.90%
+[16/75] corruption:elastic_transform, severity:1, score:0.2243, test acc:62.14%, time:5.0s (elapsed:152s, ETA:561s)
+[17/75] corruption:elastic_transform, severity:2, score:0.2259, test acc:62.94%, time:4.9s (elapsed:162s, ETA:552s)
+[18/75] corruption:elastic_transform, severity:3, score:0.2223, test acc:60.43%, time:4.9s (elapsed:171s, ETA:542s)
+[19/75] corruption:elastic_transform, severity:4, score:0.2097, test acc:51.53%, time:5.0s (elapsed:181s, ETA:532s)
+[20/75] corruption:elastic_transform, severity:5, score:0.1946, test acc:41.97%, time:4.9s (elapsed:190s, ETA:523s)
+  >> elastic_transform avg | score:0.2154, test acc:55.80%
+[21/75] corruption:fog, severity:1, score:0.2296, test acc:65.41%, time:4.9s (elapsed:200s, ETA:513s)
+[22/75] corruption:fog, severity:2, score:0.2235, test acc:61.75%, time:4.9s (elapsed:209s, ETA:504s)
+[23/75] corruption:fog, severity:3, score:0.2169, test acc:57.08%, time:4.9s (elapsed:219s, ETA:494s)
+[24/75] corruption:fog, severity:4, score:0.2022, test acc:46.52%, time:5.0s (elapsed:228s, ETA:485s)
+[25/75] corruption:fog, severity:5, score:0.1853, test acc:36.47%, time:4.9s (elapsed:238s, ETA:475s)
+  >> fog avg | score:0.2115, test acc:53.45%
+[26/75] corruption:frost, severity:1, score:0.2255, test acc:62.76%, time:4.9s (elapsed:247s, ETA:466s)
+[27/75] corruption:frost, severity:2, score:0.2194, test acc:56.82%, time:5.0s (elapsed:257s, ETA:456s)
+[28/75] corruption:frost, severity:3, score:0.2139, test acc:53.20%, time:4.9s (elapsed:266s, ETA:446s)
+[29/75] corruption:frost, severity:4, score:0.2085, test acc:49.07%, time:5.0s (elapsed:275s, ETA:437s)
+[30/75] corruption:frost, severity:5, score:0.2021, test acc:44.34%, time:4.9s (elapsed:285s, ETA:427s)
+  >> frost avg | score:0.2139, test acc:53.24%
+[31/75] corruption:gaussian_noise, severity:1, score:0.2265, test acc:63.46%, time:4.9s (elapsed:294s, ETA:418s)
+[32/75] corruption:gaussian_noise, severity:2, score:0.2058, test acc:48.62%, time:4.9s (elapsed:304s, ETA:408s)
+[33/75] corruption:gaussian_noise, severity:3, score:0.1808, test acc:34.28%, time:4.9s (elapsed:313s, ETA:399s)
+[34/75] corruption:gaussian_noise, severity:4, score:0.1643, test acc:25.60%, time:4.9s (elapsed:323s, ETA:389s)
+[35/75] corruption:gaussian_noise, severity:5, score:0.1509, test acc:19.61%, time:4.9s (elapsed:332s, ETA:380s)
+  >> gaussian_noise avg | score:0.1857, test acc:38.31%
+[36/75] corruption:glass_blur, severity:1, score:0.2132, test acc:52.45%, time:4.9s (elapsed:342s, ETA:370s)
+[37/75] corruption:glass_blur, severity:2, score:0.2044, test acc:46.89%, time:4.9s (elapsed:351s, ETA:361s)
+[38/75] corruption:glass_blur, severity:3, score:0.1871, test acc:34.87%, time:4.9s (elapsed:361s, ETA:351s)
+[39/75] corruption:glass_blur, severity:4, score:0.1640, test acc:22.04%, time:4.9s (elapsed:370s, ETA:342s)
+[40/75] corruption:glass_blur, severity:5, score:0.1480, test acc:13.99%, time:4.9s (elapsed:380s, ETA:332s)
+  >> glass_blur avg | score:0.1833, test acc:34.05%
+[41/75] corruption:impulse_noise, severity:1, score:0.2245, test acc:62.04%, time:4.9s (elapsed:389s, ETA:323s)
+[42/75] corruption:impulse_noise, severity:2, score:0.2162, test acc:57.10%, time:4.9s (elapsed:399s, ETA:313s)
+[43/75] corruption:impulse_noise, severity:3, score:0.1930, test acc:40.73%, time:4.9s (elapsed:408s, ETA:304s)
+[44/75] corruption:impulse_noise, severity:4, score:0.1725, test acc:29.58%, time:4.9s (elapsed:418s, ETA:294s)
+[45/75] corruption:impulse_noise, severity:5, score:0.1433, test acc:15.13%, time:4.9s (elapsed:427s, ETA:285s)
+  >> impulse_noise avg | score:0.1899, test acc:40.92%
+[46/75] corruption:jpeg_compression, severity:1, score:0.2256, test acc:63.29%, time:4.9s (elapsed:437s, ETA:275s)
+[47/75] corruption:jpeg_compression, severity:2, score:0.2229, test acc:61.54%, time:4.9s (elapsed:446s, ETA:266s)
+[48/75] corruption:jpeg_compression, severity:3, score:0.2190, test acc:59.02%, time:4.9s (elapsed:456s, ETA:256s)
+[49/75] corruption:jpeg_compression, severity:4, score:0.2141, test acc:55.70%, time:4.9s (elapsed:465s, ETA:247s)
+[50/75] corruption:jpeg_compression, severity:5, score:0.2003, test acc:45.01%, time:5.0s (elapsed:475s, ETA:237s)
+  >> jpeg_compression avg | score:0.2164, test acc:56.91%
+[51/75] corruption:motion_blur, severity:1, score:0.2260, test acc:62.92%, time:5.0s (elapsed:484s, ETA:228s)
+[52/75] corruption:motion_blur, severity:2, score:0.2199, test acc:57.78%, time:4.9s (elapsed:494s, ETA:218s)
+[53/75] corruption:motion_blur, severity:3, score:0.2131, test acc:52.44%, time:5.0s (elapsed:503s, ETA:209s)
+[54/75] corruption:motion_blur, severity:4, score:0.2060, test acc:47.40%, time:5.0s (elapsed:513s, ETA:199s)
+[55/75] corruption:motion_blur, severity:5, score:0.1984, test acc:42.53%, time:4.9s (elapsed:522s, ETA:190s)
+  >> motion_blur avg | score:0.2127, test acc:52.61%
+[56/75] corruption:pixelate, severity:1, score:0.2300, test acc:66.04%, time:4.9s (elapsed:532s, ETA:180s)
+[57/75] corruption:pixelate, severity:2, score:0.2268, test acc:63.57%, time:4.9s (elapsed:541s, ETA:171s)
+[58/75] corruption:pixelate, severity:3, score:0.2201, test acc:59.95%, time:4.9s (elapsed:551s, ETA:161s)
+[59/75] corruption:pixelate, severity:4, score:0.2140, test acc:54.41%, time:4.9s (elapsed:560s, ETA:152s)
+[60/75] corruption:pixelate, severity:5, score:0.2074, test acc:49.29%, time:4.9s (elapsed:570s, ETA:142s)
+  >> pixelate avg | score:0.2196, test acc:58.65%
+[61/75] corruption:shot_noise, severity:1, score:0.2265, test acc:63.30%, time:4.9s (elapsed:579s, ETA:133s)
+[62/75] corruption:shot_noise, severity:2, score:0.2155, test acc:55.38%, time:4.9s (elapsed:588s, ETA:123s)
+[63/75] corruption:shot_noise, severity:3, score:0.2010, test acc:46.03%, time:5.0s (elapsed:598s, ETA:114s)
+[64/75] corruption:shot_noise, severity:4, score:0.1863, test acc:36.16%, time:5.0s (elapsed:607s, ETA:104s)
+[65/75] corruption:shot_noise, severity:5, score:0.1621, test acc:23.53%, time:5.0s (elapsed:617s, ETA:95s)
+  >> shot_noise avg | score:0.1983, test acc:44.88%
+[66/75] corruption:snow, severity:1, score:0.2248, test acc:62.18%, time:5.0s (elapsed:627s, ETA:85s)
+[67/75] corruption:snow, severity:2, score:0.2164, test acc:54.84%, time:5.0s (elapsed:636s, ETA:76s)
+[68/75] corruption:snow, severity:3, score:0.2095, test acc:50.32%, time:4.9s (elapsed:646s, ETA:66s)
+[69/75] corruption:snow, severity:4, score:0.1967, test acc:41.47%, time:5.0s (elapsed:655s, ETA:57s)
+[70/75] corruption:snow, severity:5, score:0.1987, test acc:42.30%, time:4.9s (elapsed:665s, ETA:47s)
+  >> snow avg | score:0.2092, test acc:50.22%
+[71/75] corruption:zoom_blur, severity:1, score:0.2224, test acc:60.45%, time:4.9s (elapsed:674s, ETA:38s)
+[72/75] corruption:zoom_blur, severity:2, score:0.2170, test acc:56.90%, time:4.9s (elapsed:684s, ETA:28s)
+[73/75] corruption:zoom_blur, severity:3, score:0.2136, test acc:53.41%, time:4.9s (elapsed:693s, ETA:19s)
+[74/75] corruption:zoom_blur, severity:4, score:0.2063, test acc:48.83%, time:4.9s (elapsed:703s, ETA:9s)
+[75/75] corruption:zoom_blur, severity:5, score:0.1981, test acc:43.68%, time:4.9s (elapsed:712s, ETA:0s)
+  >> zoom_blur avg | score:0.2115, test acc:52.65%
+======================================================================
+Mean scores:0.20565863887468974, time:4.9459264246622725
+Correlation:0.9831154869197747
+Spearman:0.9971266002844951
+Total wall time: 712.0s
+======================================================================
+[CIFAR-10] Evaluating wrn_50_2...
+======================================================================
+alg:mano, dataname:cifar10, model:wrn_50_2, device:cuda:2
+corruptions:19, severities:5, total_iters:95
+======================================================================
+[1/95] corruption:brightness, severity:1, score:0.5552, test acc:96.79%, time:8.1s (elapsed:16s, ETA:1496s)
+[2/95] corruption:brightness, severity:2, score:0.5550, test acc:96.68%, time:7.2s (elapsed:30s, ETA:1417s)
+[3/95] corruption:brightness, severity:3, score:0.5543, test acc:96.26%, time:7.2s (elapsed:45s, ETA:1385s)
+[4/95] corruption:brightness, severity:4, score:0.5537, test acc:96.00%, time:7.3s (elapsed:60s, ETA:1362s)
+[5/95] corruption:brightness, severity:5, score:0.5515, test acc:94.76%, time:7.3s (elapsed:75s, ETA:1346s)
+  >> brightness avg | score:0.5539, test acc:96.10%
+[6/95] corruption:contrast, severity:1, score:0.5548, test acc:96.62%, time:7.3s (elapsed:90s, ETA:1336s)
+[7/95] corruption:contrast, severity:2, score:0.5542, test acc:96.23%, time:7.3s (elapsed:105s, ETA:1320s)
+[8/95] corruption:contrast, severity:3, score:0.5537, test acc:95.72%, time:7.3s (elapsed:120s, ETA:1303s)
+[9/95] corruption:contrast, severity:4, score:0.5522, test acc:95.07%, time:7.3s (elapsed:135s, ETA:1287s)
+[10/95] corruption:contrast, severity:5, score:0.5476, test acc:92.34%, time:7.3s (elapsed:150s, ETA:1271s)
+  >> contrast avg | score:0.5525, test acc:95.20%
+[11/95] corruption:defocus_blur, severity:1, score:0.5550, test acc:96.56%, time:7.3s (elapsed:165s, ETA:1258s)
+[12/95] corruption:defocus_blur, severity:2, score:0.5540, test acc:96.14%, time:7.3s (elapsed:180s, ETA:1243s)
+[13/95] corruption:defocus_blur, severity:3, score:0.5524, test acc:95.08%, time:7.3s (elapsed:195s, ETA:1227s)
+[14/95] corruption:defocus_blur, severity:4, score:0.5495, test acc:93.34%, time:7.3s (elapsed:209s, ETA:1212s)
+[15/95] corruption:defocus_blur, severity:5, score:0.5428, test acc:89.37%, time:7.3s (elapsed:224s, ETA:1196s)
+  >> defocus_blur avg | score:0.5508, test acc:94.10%
+[16/95] corruption:elastic_transform, severity:1, score:0.5498, test acc:93.68%, time:7.3s (elapsed:240s, ETA:1184s)
+[17/95] corruption:elastic_transform, severity:2, score:0.5498, test acc:93.83%, time:7.3s (elapsed:255s, ETA:1168s)
+[18/95] corruption:elastic_transform, severity:3, score:0.5480, test acc:92.56%, time:7.3s (elapsed:269s, ETA:1153s)
+[19/95] corruption:elastic_transform, severity:4, score:0.5389, test acc:87.28%, time:7.3s (elapsed:284s, ETA:1137s)
+[20/95] corruption:elastic_transform, severity:5, score:0.5281, test acc:80.11%, time:7.4s (elapsed:299s, ETA:1122s)
+  >> elastic_transform avg | score:0.5429, test acc:89.49%
+[21/95] corruption:fog, severity:1, score:0.5550, test acc:96.63%, time:7.4s (elapsed:314s, ETA:1107s)
+[22/95] corruption:fog, severity:2, score:0.5540, test acc:96.29%, time:7.3s (elapsed:329s, ETA:1092s)
+[23/95] corruption:fog, severity:3, score:0.5530, test acc:95.58%, time:7.3s (elapsed:344s, ETA:1077s)
+[24/95] corruption:fog, severity:4, score:0.5503, test acc:94.07%, time:7.3s (elapsed:359s, ETA:1061s)
+[25/95] corruption:fog, severity:5, score:0.5427, test acc:89.65%, time:7.3s (elapsed:374s, ETA:1046s)
+  >> fog avg | score:0.5510, test acc:94.44%
+[26/95] corruption:frost, severity:1, score:0.5522, test acc:95.31%, time:7.3s (elapsed:389s, ETA:1031s)
+[27/95] corruption:frost, severity:2, score:0.5490, test acc:93.36%, time:7.3s (elapsed:403s, ETA:1016s)
+[28/95] corruption:frost, severity:3, score:0.5447, test acc:90.58%, time:7.4s (elapsed:418s, ETA:1001s)
+[29/95] corruption:frost, severity:4, score:0.5445, test acc:90.66%, time:7.3s (elapsed:433s, ETA:986s)
+[30/95] corruption:frost, severity:5, score:0.5402, test acc:87.56%, time:7.3s (elapsed:448s, ETA:971s)
+  >> frost avg | score:0.5461, test acc:91.49%
+[31/95] corruption:gaussian_blur, severity:1, score:0.5546, test acc:96.57%, time:7.3s (elapsed:463s, ETA:956s)
+[32/95] corruption:gaussian_blur, severity:2, score:0.5526, test acc:95.09%, time:7.3s (elapsed:478s, ETA:941s)
+[33/95] corruption:gaussian_blur, severity:3, score:0.5507, test acc:94.00%, time:7.3s (elapsed:493s, ETA:925s)
+[34/95] corruption:gaussian_blur, severity:4, score:0.5481, test acc:92.64%, time:7.3s (elapsed:507s, ETA:910s)
+[35/95] corruption:gaussian_blur, severity:5, score:0.5421, test acc:88.80%, time:7.3s (elapsed:522s, ETA:895s)
+  >> gaussian_blur avg | score:0.5496, test acc:93.42%
+[36/95] corruption:gaussian_noise, severity:1, score:0.5430, test acc:89.46%, time:7.3s (elapsed:537s, ETA:880s)
+[37/95] corruption:gaussian_noise, severity:2, score:0.5309, test acc:81.37%, time:7.3s (elapsed:552s, ETA:865s)
+[38/95] corruption:gaussian_noise, severity:3, score:0.5199, test acc:74.16%, time:7.3s (elapsed:567s, ETA:850s)
+[39/95] corruption:gaussian_noise, severity:4, score:0.5131, test acc:69.47%, time:7.3s (elapsed:582s, ETA:836s)
+[40/95] corruption:gaussian_noise, severity:5, score:0.5062, test acc:65.82%, time:7.3s (elapsed:597s, ETA:821s)
+  >> gaussian_noise avg | score:0.5226, test acc:76.06%
+[41/95] corruption:glass_blur, severity:1, score:0.5282, test acc:80.73%, time:7.3s (elapsed:612s, ETA:806s)
+[42/95] corruption:glass_blur, severity:2, score:0.5289, test acc:81.33%, time:7.4s (elapsed:627s, ETA:791s)
+[43/95] corruption:glass_blur, severity:3, score:0.5297, test acc:81.55%, time:7.3s (elapsed:641s, ETA:776s)
+[44/95] corruption:glass_blur, severity:4, score:0.5098, test acc:69.83%, time:7.3s (elapsed:656s, ETA:761s)
+[45/95] corruption:glass_blur, severity:5, score:0.5110, test acc:70.38%, time:7.3s (elapsed:671s, ETA:746s)
+  >> glass_blur avg | score:0.5215, test acc:76.76%
+[46/95] corruption:impulse_noise, severity:1, score:0.5483, test acc:93.33%, time:7.3s (elapsed:686s, ETA:731s)
+[47/95] corruption:impulse_noise, severity:2, score:0.5418, test acc:88.70%, time:7.3s (elapsed:701s, ETA:716s)
+[48/95] corruption:impulse_noise, severity:3, score:0.5354, test acc:84.88%, time:7.3s (elapsed:716s, ETA:701s)
+[49/95] corruption:impulse_noise, severity:4, score:0.5219, test acc:76.52%, time:7.3s (elapsed:731s, ETA:686s)
+[50/95] corruption:impulse_noise, severity:5, score:0.5104, test acc:68.72%, time:7.3s (elapsed:746s, ETA:671s)
+  >> impulse_noise avg | score:0.5316, test acc:82.43%
+[51/95] corruption:jpeg_compression, severity:1, score:0.5398, test acc:86.85%, time:7.3s (elapsed:761s, ETA:656s)
+[52/95] corruption:jpeg_compression, severity:2, score:0.5311, test acc:80.78%, time:7.3s (elapsed:776s, ETA:641s)
+[53/95] corruption:jpeg_compression, severity:3, score:0.5268, test acc:78.03%, time:7.3s (elapsed:790s, ETA:626s)
+[54/95] corruption:jpeg_compression, severity:4, score:0.5224, test acc:74.98%, time:7.3s (elapsed:805s, ETA:611s)
+[55/95] corruption:jpeg_compression, severity:5, score:0.5164, test acc:70.76%, time:7.3s (elapsed:820s, ETA:596s)
+  >> jpeg_compression avg | score:0.5273, test acc:78.28%
+[56/95] corruption:motion_blur, severity:1, score:0.5519, test acc:94.86%, time:7.3s (elapsed:835s, ETA:582s)
+[57/95] corruption:motion_blur, severity:2, score:0.5482, test acc:92.88%, time:7.3s (elapsed:850s, ETA:567s)
+[58/95] corruption:motion_blur, severity:3, score:0.5439, test acc:89.77%, time:7.3s (elapsed:865s, ETA:552s)
+[59/95] corruption:motion_blur, severity:4, score:0.5435, test acc:89.87%, time:7.3s (elapsed:880s, ETA:537s)
+[60/95] corruption:motion_blur, severity:5, score:0.5388, test acc:86.89%, time:7.3s (elapsed:894s, ETA:522s)
+  >> motion_blur avg | score:0.5452, test acc:90.85%
+[61/95] corruption:pixelate, severity:1, score:0.5526, test acc:95.38%, time:7.3s (elapsed:909s, ETA:507s)
+[62/95] corruption:pixelate, severity:2, score:0.5507, test acc:94.36%, time:7.3s (elapsed:924s, ETA:492s)
+[63/95] corruption:pixelate, severity:3, score:0.5491, test acc:93.16%, time:7.3s (elapsed:939s, ETA:477s)
+[64/95] corruption:pixelate, severity:4, score:0.5444, test acc:90.41%, time:7.3s (elapsed:954s, ETA:462s)
+[65/95] corruption:pixelate, severity:5, score:0.5348, test acc:84.79%, time:7.3s (elapsed:969s, ETA:447s)
+  >> pixelate avg | score:0.5463, test acc:91.62%
+[66/95] corruption:saturate, severity:1, score:0.5545, test acc:96.39%, time:7.3s (elapsed:984s, ETA:432s)
+[67/95] corruption:saturate, severity:2, score:0.5530, test acc:95.49%, time:7.3s (elapsed:999s, ETA:417s)
+[68/95] corruption:saturate, severity:3, score:0.5548, test acc:96.41%, time:7.3s (elapsed:1013s, ETA:402s)
+[69/95] corruption:saturate, severity:4, score:0.5538, test acc:95.65%, time:7.3s (elapsed:1028s, ETA:387s)
+[70/95] corruption:saturate, severity:5, score:0.5511, test acc:94.63%, time:7.3s (elapsed:1043s, ETA:373s)
+  >> saturate avg | score:0.5534, test acc:95.71%
+[71/95] corruption:shot_noise, severity:1, score:0.5479, test acc:92.51%, time:7.3s (elapsed:1058s, ETA:358s)
+[72/95] corruption:shot_noise, severity:2, score:0.5418, test acc:89.23%, time:7.3s (elapsed:1073s, ETA:343s)
+[73/95] corruption:shot_noise, severity:3, score:0.5294, test acc:80.04%, time:7.3s (elapsed:1088s, ETA:328s)
+[74/95] corruption:shot_noise, severity:4, score:0.5236, test acc:76.49%, time:7.4s (elapsed:1103s, ETA:313s)
+[75/95] corruption:shot_noise, severity:5, score:0.5124, test acc:70.24%, time:7.4s (elapsed:1118s, ETA:298s)
+  >> shot_noise avg | score:0.5310, test acc:81.70%
+[76/95] corruption:snow, severity:1, score:0.5520, test acc:94.88%, time:7.3s (elapsed:1133s, ETA:283s)
+[77/95] corruption:snow, severity:2, score:0.5465, test acc:91.68%, time:7.3s (elapsed:1147s, ETA:268s)
+[78/95] corruption:snow, severity:3, score:0.5469, test acc:91.74%, time:7.3s (elapsed:1162s, ETA:253s)
+[79/95] corruption:snow, severity:4, score:0.5435, test acc:89.34%, time:7.3s (elapsed:1177s, ETA:238s)
+[80/95] corruption:snow, severity:5, score:0.5415, test acc:88.61%, time:7.3s (elapsed:1192s, ETA:224s)
+  >> snow avg | score:0.5461, test acc:91.25%
+[81/95] corruption:spatter, severity:1, score:0.5536, test acc:95.89%, time:7.3s (elapsed:1207s, ETA:209s)
+[82/95] corruption:spatter, severity:2, score:0.5505, test acc:93.87%, time:7.3s (elapsed:1222s, ETA:194s)
+[83/95] corruption:spatter, severity:3, score:0.5451, test acc:91.45%, time:7.3s (elapsed:1237s, ETA:179s)
+[84/95] corruption:spatter, severity:4, score:0.5498, test acc:93.75%, time:7.3s (elapsed:1252s, ETA:164s)
+[85/95] corruption:spatter, severity:5, score:0.5449, test acc:90.91%, time:7.3s (elapsed:1267s, ETA:149s)
+  >> spatter avg | score:0.5488, test acc:93.17%
+[86/95] corruption:speckle_noise, severity:1, score:0.5480, test acc:92.69%, time:7.4s (elapsed:1281s, ETA:134s)
+[87/95] corruption:speckle_noise, severity:2, score:0.5403, test acc:87.54%, time:7.3s (elapsed:1296s, ETA:119s)
+[88/95] corruption:speckle_noise, severity:3, score:0.5345, test acc:84.40%, time:7.3s (elapsed:1311s, ETA:104s)
+[89/95] corruption:speckle_noise, severity:4, score:0.5246, test acc:77.76%, time:7.3s (elapsed:1326s, ETA:89s)
+[90/95] corruption:speckle_noise, severity:5, score:0.5132, test acc:70.57%, time:7.4s (elapsed:1341s, ETA:75s)
+  >> speckle_noise avg | score:0.5321, test acc:82.59%
+[91/95] corruption:zoom_blur, severity:1, score:0.5513, test acc:94.71%, time:7.3s (elapsed:1356s, ETA:60s)
+[92/95] corruption:zoom_blur, severity:2, score:0.5509, test acc:94.74%, time:7.3s (elapsed:1371s, ETA:45s)
+[93/95] corruption:zoom_blur, severity:3, score:0.5492, test acc:93.86%, time:7.3s (elapsed:1386s, ETA:30s)
+[94/95] corruption:zoom_blur, severity:4, score:0.5479, test acc:92.98%, time:7.3s (elapsed:1400s, ETA:15s)
+[95/95] corruption:zoom_blur, severity:5, score:0.5444, test acc:91.30%, time:7.3s (elapsed:1415s, ETA:0s)
+  >> zoom_blur avg | score:0.5487, test acc:93.52%
+======================================================================
+Mean scores:0.5421883018393265, time:7.3314932647504305
+Correlation:0.9964376447723794
+Spearman:0.9982222844344906
+Total wall time: 1415.2s
+======================================================================
+[CIFAR-100] Evaluating wrn_50_2...
+======================================================================
+alg:mano, dataname:cifar100, model:wrn_50_2, device:cuda:2
+corruptions:19, severities:5, total_iters:95
+======================================================================
+[1/95] corruption:brightness, severity:1, score:0.2962, test acc:83.95%, time:8.0s (elapsed:16s, ETA:1497s)
+[2/95] corruption:brightness, severity:2, score:0.2956, test acc:83.37%, time:7.2s (elapsed:30s, ETA:1416s)
+[3/95] corruption:brightness, severity:3, score:0.2947, test acc:82.37%, time:7.2s (elapsed:45s, ETA:1382s)
+[4/95] corruption:brightness, severity:4, score:0.2931, test acc:81.31%, time:7.2s (elapsed:60s, ETA:1359s)
+[5/95] corruption:brightness, severity:5, score:0.2894, test acc:78.70%, time:7.2s (elapsed:74s, ETA:1340s)
+  >> brightness avg | score:0.2938, test acc:81.94%
+[6/95] corruption:contrast, severity:1, score:0.2961, test acc:83.96%, time:7.3s (elapsed:90s, ETA:1328s)
+[7/95] corruption:contrast, severity:2, score:0.2949, test acc:82.70%, time:7.2s (elapsed:104s, ETA:1312s)
+[8/95] corruption:contrast, severity:3, score:0.2929, test acc:81.76%, time:7.3s (elapsed:119s, ETA:1295s)
+[9/95] corruption:contrast, severity:4, score:0.2922, test acc:80.10%, time:7.3s (elapsed:134s, ETA:1279s)
+[10/95] corruption:contrast, severity:5, score:0.2864, test acc:75.11%, time:7.3s (elapsed:149s, ETA:1264s)
+  >> contrast avg | score:0.2925, test acc:80.73%
+[11/95] corruption:defocus_blur, severity:1, score:0.2958, test acc:83.79%, time:7.3s (elapsed:164s, ETA:1249s)
+[12/95] corruption:defocus_blur, severity:2, score:0.2947, test acc:82.65%, time:7.3s (elapsed:178s, ETA:1234s)
+[13/95] corruption:defocus_blur, severity:3, score:0.2929, test acc:81.28%, time:7.3s (elapsed:193s, ETA:1219s)
+[14/95] corruption:defocus_blur, severity:4, score:0.2875, test acc:77.63%, time:7.3s (elapsed:208s, ETA:1204s)
+[15/95] corruption:defocus_blur, severity:5, score:0.2785, test acc:70.09%, time:7.3s (elapsed:223s, ETA:1189s)
+  >> defocus_blur avg | score:0.2899, test acc:79.09%
+[16/95] corruption:elastic_transform, severity:1, score:0.2878, test acc:77.64%, time:7.3s (elapsed:238s, ETA:1174s)
+[17/95] corruption:elastic_transform, severity:2, score:0.2884, test acc:78.39%, time:7.3s (elapsed:253s, ETA:1159s)
+[18/95] corruption:elastic_transform, severity:3, score:0.2853, test acc:75.52%, time:7.3s (elapsed:267s, ETA:1144s)
+[19/95] corruption:elastic_transform, severity:4, score:0.2704, test acc:65.03%, time:7.3s (elapsed:282s, ETA:1129s)
+[20/95] corruption:elastic_transform, severity:5, score:0.2539, test acc:54.26%, time:7.3s (elapsed:297s, ETA:1114s)
+  >> elastic_transform avg | score:0.2772, test acc:70.17%
+[21/95] corruption:fog, severity:1, score:0.2959, test acc:83.65%, time:7.3s (elapsed:312s, ETA:1099s)
+[22/95] corruption:fog, severity:2, score:0.2935, test acc:82.12%, time:7.3s (elapsed:327s, ETA:1084s)
+[23/95] corruption:fog, severity:3, score:0.2912, test acc:79.94%, time:7.3s (elapsed:342s, ETA:1069s)
+[24/95] corruption:fog, severity:4, score:0.2866, test acc:76.17%, time:7.3s (elapsed:356s, ETA:1055s)
+[25/95] corruption:fog, severity:5, score:0.2726, test acc:65.89%, time:7.3s (elapsed:371s, ETA:1040s)
+  >> fog avg | score:0.2879, test acc:77.55%
+[26/95] corruption:frost, severity:1, score:0.2901, test acc:79.46%, time:7.3s (elapsed:386s, ETA:1025s)
+[27/95] corruption:frost, severity:2, score:0.2844, test acc:75.18%, time:7.3s (elapsed:401s, ETA:1010s)
+[28/95] corruption:frost, severity:3, score:0.2776, test acc:69.41%, time:7.3s (elapsed:416s, ETA:995s)
+[29/95] corruption:frost, severity:4, score:0.2765, test acc:68.66%, time:7.3s (elapsed:431s, ETA:980s)
+[30/95] corruption:frost, severity:5, score:0.2695, test acc:63.30%, time:7.3s (elapsed:446s, ETA:965s)
+  >> frost avg | score:0.2796, test acc:71.20%
+[31/95] corruption:gaussian_blur, severity:1, score:0.2958, test acc:83.88%, time:7.3s (elapsed:460s, ETA:951s)
+[32/95] corruption:gaussian_blur, severity:2, score:0.2928, test acc:81.52%, time:7.3s (elapsed:475s, ETA:936s)
+[33/95] corruption:gaussian_blur, severity:3, score:0.2902, test acc:79.28%, time:7.3s (elapsed:490s, ETA:921s)
+[34/95] corruption:gaussian_blur, severity:4, score:0.2863, test acc:76.43%, time:7.3s (elapsed:505s, ETA:906s)
+[35/95] corruption:gaussian_blur, severity:5, score:0.2784, test acc:69.92%, time:7.3s (elapsed:520s, ETA:891s)
+  >> gaussian_blur avg | score:0.2887, test acc:78.21%
+[36/95] corruption:gaussian_noise, severity:1, score:0.2716, test acc:65.99%, time:7.3s (elapsed:534s, ETA:876s)
+[37/95] corruption:gaussian_noise, severity:2, score:0.2527, test acc:52.81%, time:7.3s (elapsed:549s, ETA:861s)
+[38/95] corruption:gaussian_noise, severity:3, score:0.2356, test acc:42.86%, time:7.3s (elapsed:564s, ETA:846s)
+[39/95] corruption:gaussian_noise, severity:4, score:0.2260, test acc:38.03%, time:7.3s (elapsed:579s, ETA:831s)
+[40/95] corruption:gaussian_noise, severity:5, score:0.2174, test acc:32.74%, time:7.3s (elapsed:594s, ETA:817s)
+  >> gaussian_noise avg | score:0.2407, test acc:46.49%
+[41/95] corruption:glass_blur, severity:1, score:0.2553, test acc:54.77%, time:7.3s (elapsed:609s, ETA:802s)
+[42/95] corruption:glass_blur, severity:2, score:0.2559, test acc:54.18%, time:7.3s (elapsed:624s, ETA:787s)
+[43/95] corruption:glass_blur, severity:3, score:0.2568, test acc:55.18%, time:7.3s (elapsed:638s, ETA:772s)
+[44/95] corruption:glass_blur, severity:4, score:0.2344, test acc:40.64%, time:7.3s (elapsed:653s, ETA:757s)
+[45/95] corruption:glass_blur, severity:5, score:0.2354, test acc:42.16%, time:7.3s (elapsed:668s, ETA:742s)
+  >> glass_blur avg | score:0.2476, test acc:49.39%
+[46/95] corruption:impulse_noise, severity:1, score:0.2836, test acc:75.09%, time:7.3s (elapsed:683s, ETA:727s)
+[47/95] corruption:impulse_noise, severity:2, score:0.2724, test acc:66.64%, time:7.3s (elapsed:698s, ETA:713s)
+[48/95] corruption:impulse_noise, severity:3, score:0.2603, test acc:58.86%, time:7.3s (elapsed:713s, ETA:698s)
+[49/95] corruption:impulse_noise, severity:4, score:0.2403, test acc:46.23%, time:7.3s (elapsed:727s, ETA:683s)
+[50/95] corruption:impulse_noise, severity:5, score:0.2224, test acc:36.35%, time:7.3s (elapsed:742s, ETA:668s)
+  >> impulse_noise avg | score:0.2558, test acc:56.63%
+[51/95] corruption:jpeg_compression, severity:1, score:0.2700, test acc:64.08%, time:7.3s (elapsed:757s, ETA:653s)
+[52/95] corruption:jpeg_compression, severity:2, score:0.2547, test acc:53.37%, time:7.3s (elapsed:772s, ETA:638s)
+[53/95] corruption:jpeg_compression, severity:3, score:0.2501, test acc:50.55%, time:7.3s (elapsed:787s, ETA:624s)
+[54/95] corruption:jpeg_compression, severity:4, score:0.2451, test acc:47.16%, time:7.3s (elapsed:802s, ETA:609s)
+[55/95] corruption:jpeg_compression, severity:5, score:0.2376, test acc:42.08%, time:7.3s (elapsed:816s, ETA:594s)
+  >> jpeg_compression avg | score:0.2515, test acc:51.45%
+[56/95] corruption:motion_blur, severity:1, score:0.2907, test acc:79.65%, time:7.3s (elapsed:831s, ETA:579s)
+[57/95] corruption:motion_blur, severity:2, score:0.2863, test acc:75.61%, time:7.3s (elapsed:846s, ETA:564s)
+[58/95] corruption:motion_blur, severity:3, score:0.2806, test acc:71.00%, time:7.3s (elapsed:861s, ETA:549s)
+[59/95] corruption:motion_blur, severity:4, score:0.2806, test acc:71.20%, time:7.3s (elapsed:876s, ETA:534s)
+[60/95] corruption:motion_blur, severity:5, score:0.2743, test acc:65.87%, time:7.3s (elapsed:891s, ETA:519s)
+  >> motion_blur avg | score:0.2825, test acc:72.67%
+[61/95] corruption:pixelate, severity:1, score:0.2913, test acc:80.40%, time:7.3s (elapsed:905s, ETA:505s)
+[62/95] corruption:pixelate, severity:2, score:0.2869, test acc:77.17%, time:7.3s (elapsed:920s, ETA:490s)
+[63/95] corruption:pixelate, severity:3, score:0.2847, test acc:75.33%, time:7.3s (elapsed:935s, ETA:475s)
+[64/95] corruption:pixelate, severity:4, score:0.2764, test acc:69.16%, time:7.3s (elapsed:950s, ETA:460s)
+[65/95] corruption:pixelate, severity:5, score:0.2627, test acc:59.50%, time:7.3s (elapsed:965s, ETA:445s)
+  >> pixelate avg | score:0.2804, test acc:72.31%
+[66/95] corruption:saturate, severity:1, score:0.2941, test acc:82.38%, time:7.3s (elapsed:980s, ETA:430s)
+[67/95] corruption:saturate, severity:2, score:0.2900, test acc:79.27%, time:7.3s (elapsed:994s, ETA:416s)
+[68/95] corruption:saturate, severity:3, score:0.2953, test acc:83.21%, time:7.3s (elapsed:1009s, ETA:401s)
+[69/95] corruption:saturate, severity:4, score:0.2915, test acc:80.17%, time:7.3s (elapsed:1024s, ETA:386s)
+[70/95] corruption:saturate, severity:5, score:0.2868, test acc:76.37%, time:7.3s (elapsed:1039s, ETA:371s)
+  >> saturate avg | score:0.2916, test acc:80.28%
+[71/95] corruption:shot_noise, severity:1, score:0.2805, test acc:72.52%, time:7.3s (elapsed:1054s, ETA:356s)
+[72/95] corruption:shot_noise, severity:2, score:0.2706, test acc:64.84%, time:7.3s (elapsed:1069s, ETA:341s)
+[73/95] corruption:shot_noise, severity:3, score:0.2479, test acc:49.61%, time:7.3s (elapsed:1083s, ETA:327s)
+[74/95] corruption:shot_noise, severity:4, score:0.2385, test acc:44.75%, time:7.3s (elapsed:1098s, ETA:312s)
+[75/95] corruption:shot_noise, severity:5, score:0.2248, test acc:36.10%, time:7.3s (elapsed:1113s, ETA:297s)
+  >> shot_noise avg | score:0.2525, test acc:53.56%
+[76/95] corruption:snow, severity:1, score:0.2891, test acc:79.33%, time:7.3s (elapsed:1128s, ETA:282s)
+[77/95] corruption:snow, severity:2, score:0.2793, test acc:70.95%, time:7.3s (elapsed:1143s, ETA:267s)
+[78/95] corruption:snow, severity:3, score:0.2805, test acc:71.17%, time:7.3s (elapsed:1158s, ETA:252s)
+[79/95] corruption:snow, severity:4, score:0.2759, test acc:67.54%, time:7.3s (elapsed:1173s, ETA:237s)
+[80/95] corruption:snow, severity:5, score:0.2724, test acc:64.70%, time:7.3s (elapsed:1187s, ETA:223s)
+  >> snow avg | score:0.2794, test acc:70.74%
+[81/95] corruption:spatter, severity:1, score:0.2932, test acc:81.87%, time:7.3s (elapsed:1202s, ETA:208s)
+[82/95] corruption:spatter, severity:2, score:0.2882, test acc:77.78%, time:7.3s (elapsed:1217s, ETA:193s)
+[83/95] corruption:spatter, severity:3, score:0.2801, test acc:72.01%, time:7.3s (elapsed:1232s, ETA:178s)
+[84/95] corruption:spatter, severity:4, score:0.2870, test acc:77.12%, time:7.3s (elapsed:1247s, ETA:163s)
+[85/95] corruption:spatter, severity:5, score:0.2786, test acc:71.33%, time:7.3s (elapsed:1262s, ETA:148s)
+  >> spatter avg | score:0.2854, test acc:76.02%
+[86/95] corruption:speckle_noise, severity:1, score:0.2807, test acc:72.92%, time:7.3s (elapsed:1277s, ETA:134s)
+[87/95] corruption:speckle_noise, severity:2, score:0.2656, test acc:61.33%, time:7.3s (elapsed:1291s, ETA:119s)
+[88/95] corruption:speckle_noise, severity:3, score:0.2571, test acc:56.02%, time:7.3s (elapsed:1306s, ETA:104s)
+[89/95] corruption:speckle_noise, severity:4, score:0.2396, test acc:45.06%, time:7.3s (elapsed:1321s, ETA:89s)
+[90/95] corruption:speckle_noise, severity:5, score:0.2263, test acc:36.74%, time:7.3s (elapsed:1336s, ETA:74s)
+  >> speckle_noise avg | score:0.2539, test acc:54.41%
+[91/95] corruption:zoom_blur, severity:1, score:0.2911, test acc:79.99%, time:7.3s (elapsed:1351s, ETA:59s)
+[92/95] corruption:zoom_blur, severity:2, score:0.2898, test acc:79.28%, time:7.3s (elapsed:1366s, ETA:45s)
+[93/95] corruption:zoom_blur, severity:3, score:0.2870, test acc:77.67%, time:7.3s (elapsed:1380s, ETA:30s)
+[94/95] corruption:zoom_blur, severity:4, score:0.2851, test acc:75.49%, time:7.3s (elapsed:1395s, ETA:15s)
+[95/95] corruption:zoom_blur, severity:5, score:0.2821, test acc:72.60%, time:7.3s (elapsed:1410s, ETA:0s)
+  >> zoom_blur avg | score:0.2870, test acc:77.01%
+======================================================================
+Mean scores:0.27462001835045063, time:7.3162059256905
+Correlation:0.9948420225429989
+Spearman:0.9981767853392073
+Total wall time: 1410.1s
+======================================================================
+[TinyImageNet] Evaluating wrn_50_2...
+======================================================================
+alg:mano, dataname:tinyimagenet, model:wrn_50_2, device:cuda:2
+corruptions:15, severities:5, total_iters:75
+======================================================================
+[1/75] corruption:brightness, severity:1, score:0.2401, test acc:74.15%, time:8.2s (elapsed:15s, ETA:1103s)
+[2/75] corruption:brightness, severity:2, score:0.2376, test acc:72.65%, time:7.2s (elapsed:29s, ETA:1054s)
+[3/75] corruption:brightness, severity:3, score:0.2348, test acc:69.86%, time:7.3s (elapsed:43s, ETA:1030s)
+[4/75] corruption:brightness, severity:4, score:0.2293, test acc:65.87%, time:7.3s (elapsed:57s, ETA:1013s)
+[5/75] corruption:brightness, severity:5, score:0.2229, test acc:59.67%, time:7.3s (elapsed:71s, ETA:997s)
+  >> brightness avg | score:0.2329, test acc:68.44%
+[6/75] corruption:contrast, severity:1, score:0.2270, test acc:63.33%, time:7.3s (elapsed:85s, ETA:982s)
+[7/75] corruption:contrast, severity:2, score:0.2204, test acc:57.42%, time:7.3s (elapsed:100s, ETA:967s)
+[8/75] corruption:contrast, severity:3, score:0.2070, test acc:46.26%, time:7.4s (elapsed:114s, ETA:953s)
+[9/75] corruption:contrast, severity:4, score:0.1784, test acc:25.25%, time:7.3s (elapsed:128s, ETA:938s)
+[10/75] corruption:contrast, severity:5, score:0.1555, test acc:9.25%, time:7.3s (elapsed:142s, ETA:924s)
+  >> contrast avg | score:0.1976, test acc:40.30%
+[11/75] corruption:defocus_blur, severity:1, score:0.2317, test acc:67.31%, time:7.4s (elapsed:156s, ETA:910s)
+[12/75] corruption:defocus_blur, severity:2, score:0.2282, test acc:64.53%, time:7.4s (elapsed:171s, ETA:895s)
+[13/75] corruption:defocus_blur, severity:3, score:0.2178, test acc:56.91%, time:7.4s (elapsed:185s, ETA:881s)
+[14/75] corruption:defocus_blur, severity:4, score:0.1940, test acc:39.84%, time:7.4s (elapsed:199s, ETA:867s)
+[15/75] corruption:defocus_blur, severity:5, score:0.1828, test acc:32.34%, time:7.3s (elapsed:213s, ETA:853s)
+  >> defocus_blur avg | score:0.2109, test acc:52.19%
+[16/75] corruption:elastic_transform, severity:1, score:0.2311, test acc:67.75%, time:7.4s (elapsed:227s, ETA:839s)
+[17/75] corruption:elastic_transform, severity:2, score:0.2332, test acc:68.54%, time:7.4s (elapsed:242s, ETA:825s)
+[18/75] corruption:elastic_transform, severity:3, score:0.2295, test acc:66.06%, time:7.4s (elapsed:256s, ETA:811s)
+[19/75] corruption:elastic_transform, severity:4, score:0.2185, test acc:57.92%, time:7.4s (elapsed:270s, ETA:796s)
+[20/75] corruption:elastic_transform, severity:5, score:0.2028, test acc:47.22%, time:7.4s (elapsed:284s, ETA:782s)
+  >> elastic_transform avg | score:0.2230, test acc:61.50%
+[21/75] corruption:fog, severity:1, score:0.2351, test acc:70.85%, time:7.4s (elapsed:299s, ETA:768s)
+[22/75] corruption:fog, severity:2, score:0.2309, test acc:66.87%, time:7.4s (elapsed:313s, ETA:754s)
+[23/75] corruption:fog, severity:3, score:0.2241, test acc:62.65%, time:7.3s (elapsed:327s, ETA:740s)
+[24/75] corruption:fog, severity:4, score:0.2117, test acc:52.65%, time:7.4s (elapsed:342s, ETA:726s)
+[25/75] corruption:fog, severity:5, score:0.1955, test acc:42.39%, time:7.4s (elapsed:356s, ETA:712s)
+  >> fog avg | score:0.2195, test acc:59.08%
+[26/75] corruption:frost, severity:1, score:0.2318, test acc:67.54%, time:7.4s (elapsed:370s, ETA:698s)
+[27/75] corruption:frost, severity:2, score:0.2253, test acc:62.65%, time:7.4s (elapsed:384s, ETA:683s)
+[28/75] corruption:frost, severity:3, score:0.2209, test acc:58.94%, time:7.4s (elapsed:399s, ETA:669s)
+[29/75] corruption:frost, severity:4, score:0.2144, test acc:54.33%, time:7.4s (elapsed:413s, ETA:655s)
+[30/75] corruption:frost, severity:5, score:0.2079, test acc:49.37%, time:7.4s (elapsed:427s, ETA:641s)
+  >> frost avg | score:0.2201, test acc:58.57%
+[31/75] corruption:gaussian_noise, severity:1, score:0.2326, test acc:68.63%, time:7.4s (elapsed:442s, ETA:627s)
+[32/75] corruption:gaussian_noise, severity:2, score:0.2136, test acc:54.44%, time:7.4s (elapsed:456s, ETA:613s)
+[33/75] corruption:gaussian_noise, severity:3, score:0.1909, test acc:40.19%, time:7.4s (elapsed:470s, ETA:598s)
+[34/75] corruption:gaussian_noise, severity:4, score:0.1729, test acc:30.84%, time:7.4s (elapsed:484s, ETA:584s)
+[35/75] corruption:gaussian_noise, severity:5, score:0.1566, test acc:23.47%, time:7.4s (elapsed:499s, ETA:570s)
+  >> gaussian_noise avg | score:0.1933, test acc:43.51%
+[36/75] corruption:glass_blur, severity:1, score:0.2204, test acc:58.12%, time:7.4s (elapsed:513s, ETA:556s)
+[37/75] corruption:glass_blur, severity:2, score:0.2135, test acc:53.00%, time:7.4s (elapsed:527s, ETA:541s)
+[38/75] corruption:glass_blur, severity:3, score:0.1979, test acc:42.16%, time:7.4s (elapsed:541s, ETA:527s)
+[39/75] corruption:glass_blur, severity:4, score:0.1727, test acc:26.90%, time:7.4s (elapsed:556s, ETA:513s)
+[40/75] corruption:glass_blur, severity:5, score:0.1546, test acc:17.59%, time:7.4s (elapsed:570s, ETA:499s)
+  >> glass_blur avg | score:0.1918, test acc:39.55%
+[41/75] corruption:impulse_noise, severity:1, score:0.2311, test acc:67.42%, time:7.3s (elapsed:584s, ETA:484s)
+[42/75] corruption:impulse_noise, severity:2, score:0.2227, test acc:60.75%, time:7.4s (elapsed:598s, ETA:470s)
+[43/75] corruption:impulse_noise, severity:3, score:0.1999, test acc:45.87%, time:7.4s (elapsed:613s, ETA:456s)
+[44/75] corruption:impulse_noise, severity:4, score:0.1788, test acc:33.99%, time:7.4s (elapsed:627s, ETA:442s)
+[45/75] corruption:impulse_noise, severity:5, score:0.1464, test acc:18.26%, time:7.4s (elapsed:641s, ETA:428s)
+  >> impulse_noise avg | score:0.1958, test acc:45.26%
+[46/75] corruption:jpeg_compression, severity:1, score:0.2321, test acc:67.99%, time:7.4s (elapsed:656s, ETA:413s)
+[47/75] corruption:jpeg_compression, severity:2, score:0.2297, test acc:66.25%, time:7.4s (elapsed:670s, ETA:399s)
+[48/75] corruption:jpeg_compression, severity:3, score:0.2266, test acc:63.90%, time:7.4s (elapsed:684s, ETA:385s)
+[49/75] corruption:jpeg_compression, severity:4, score:0.2217, test acc:60.54%, time:7.4s (elapsed:698s, ETA:371s)
+[50/75] corruption:jpeg_compression, severity:5, score:0.2079, test acc:50.66%, time:7.4s (elapsed:713s, ETA:356s)
+  >> jpeg_compression avg | score:0.2236, test acc:61.87%
+[51/75] corruption:motion_blur, severity:1, score:0.2332, test acc:68.30%, time:7.4s (elapsed:727s, ETA:342s)
+[52/75] corruption:motion_blur, severity:2, score:0.2274, test acc:63.84%, time:7.3s (elapsed:741s, ETA:328s)
+[53/75] corruption:motion_blur, severity:3, score:0.2218, test acc:58.71%, time:7.4s (elapsed:755s, ETA:314s)
+[54/75] corruption:motion_blur, severity:4, score:0.2155, test acc:54.37%, time:7.4s (elapsed:770s, ETA:299s)
+[55/75] corruption:motion_blur, severity:5, score:0.2089, test acc:49.64%, time:7.4s (elapsed:784s, ETA:285s)
+  >> motion_blur avg | score:0.2214, test acc:58.97%
+[56/75] corruption:pixelate, severity:1, score:0.2359, test acc:71.28%, time:7.4s (elapsed:798s, ETA:271s)
+[57/75] corruption:pixelate, severity:2, score:0.2326, test acc:68.61%, time:7.4s (elapsed:812s, ETA:257s)
+[58/75] corruption:pixelate, severity:3, score:0.2262, test acc:63.64%, time:7.4s (elapsed:827s, ETA:242s)
+[59/75] corruption:pixelate, severity:4, score:0.2202, test acc:58.05%, time:7.4s (elapsed:841s, ETA:228s)
+[60/75] corruption:pixelate, severity:5, score:0.2145, test acc:53.92%, time:7.4s (elapsed:855s, ETA:214s)
+  >> pixelate avg | score:0.2259, test acc:63.10%
+[61/75] corruption:shot_noise, severity:1, score:0.2319, test acc:68.54%, time:7.4s (elapsed:869s, ETA:200s)
+[62/75] corruption:shot_noise, severity:2, score:0.2228, test acc:60.28%, time:7.4s (elapsed:884s, ETA:185s)
+[63/75] corruption:shot_noise, severity:3, score:0.2093, test acc:51.63%, time:7.4s (elapsed:898s, ETA:171s)
+[64/75] corruption:shot_noise, severity:4, score:0.1948, test acc:42.46%, time:7.4s (elapsed:912s, ETA:157s)
+[65/75] corruption:shot_noise, severity:5, score:0.1683, test acc:28.17%, time:7.4s (elapsed:927s, ETA:143s)
+  >> shot_noise avg | score:0.2054, test acc:50.22%
+[66/75] corruption:snow, severity:1, score:0.2319, test acc:67.10%, time:7.4s (elapsed:941s, ETA:128s)
+[67/75] corruption:snow, severity:2, score:0.2224, test acc:59.92%, time:7.4s (elapsed:955s, ETA:114s)
+[68/75] corruption:snow, severity:3, score:0.2159, test acc:55.85%, time:7.4s (elapsed:969s, ETA:100s)
+[69/75] corruption:snow, severity:4, score:0.2040, test acc:46.70%, time:7.4s (elapsed:984s, ETA:86s)
+[70/75] corruption:snow, severity:5, score:0.2060, test acc:47.57%, time:7.4s (elapsed:998s, ETA:71s)
+  >> snow avg | score:0.2160, test acc:55.43%
+[71/75] corruption:zoom_blur, severity:1, score:0.2300, test acc:65.81%, time:7.4s (elapsed:1012s, ETA:57s)
+[72/75] corruption:zoom_blur, severity:2, score:0.2253, test acc:62.40%, time:7.4s (elapsed:1026s, ETA:43s)
+[73/75] corruption:zoom_blur, severity:3, score:0.2216, test acc:59.40%, time:7.4s (elapsed:1041s, ETA:29s)
+[74/75] corruption:zoom_blur, severity:4, score:0.2144, test acc:54.89%, time:7.4s (elapsed:1055s, ETA:14s)
+[75/75] corruption:zoom_blur, severity:5, score:0.2074, test acc:49.83%, time:7.4s (elapsed:1069s, ETA:0s)
+  >> zoom_blur avg | score:0.2197, test acc:58.47%
+======================================================================
+Mean scores:0.21312931835651397, time:7.382695639928182
+Correlation:0.9796501304891594
+Spearman:0.996571786328228
+Total wall time: 1069.0s
+======================================================================

@@ -16,6 +16,10 @@ datasets/
 *.png
 *.PNG
 
+# Results & wandb
+results/
+wandb/
+
 # OS
 .DS_Store
 Thumbs.db

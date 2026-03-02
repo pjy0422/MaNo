@@ -1,8 +1,14 @@
 import argparse
+import os
 from algs.utils import create_alg
 from data.utils import build_dataloader
 import numpy as np
 import time
+from utils.logging_utils import (
+    init_wandb, log_iteration, log_summary,
+    make_scatter_plot, log_scatter_to_wandb,
+    save_results_json, finish_wandb,
+)
 
 """# Configuration"""
 parser = argparse.ArgumentParser(description='ProjNorm.')
@@ -28,6 +34,13 @@ parser.add_argument('--delta', default=0, type=float)
 
 # pacs
 parser.add_argument('--source', default='None', type=str)
+
+# wandb & results
+parser.add_argument('--wandb_project', default=None, type=str)
+parser.add_argument('--wandb_group', default=None, type=str)
+parser.add_argument('--wandb_tags', default=None, type=str,
+                    help='Comma-separated tags for wandb')
+parser.add_argument('--results_dir', default='results', type=str)
 
 args = vars(parser.parse_args())
 
@@ -66,6 +79,9 @@ num_class_dict = {
 args["num_classes"] = num_class_dict[args["dataname"]]
 
 if __name__ == "__main__":
+    # Parse wandb tags
+    wandb_tags = args['wandb_tags'].split(',') if args['wandb_tags'] else None
+
     # device
     if (args['dataname']=="cifar10") or (args['dataname']=="cifar100"):
         corruption_list = ["brightness", "contrast", "defocus_blur", "elastic_transform", "fog", "frost", "gaussian_blur", "gaussian_noise", "glass_blur",
@@ -99,7 +115,16 @@ if __name__ == "__main__":
     else:
         raise TypeError('No relevant corruption list!')
 
+    # Common paths
+    results_dir = args['results_dir']
+    dataname = args['dataname']
+    alg = args['alg']
+    arch = args['arch']
+    scatter_path = os.path.join(results_dir, dataname, '{}_{}_{}_scatter.pdf'.format(alg, dataname, arch))
+    json_path = os.path.join(results_dir, dataname, '{}_{}_{}.json'.format(alg, dataname, arch))
+
     if args['dataname'] not in ['pacs', 'office_home', 'domainnet']:
+        # ---- Non-domain branch ----
         # Pre-load model once before loop
         if ('imagenet' in args['dataname']) and (args['num_classes'] == 1000):
             base_model = get_imagenet_model(args['arch'], args['num_classes'], args['seed']).to(device)
@@ -108,10 +133,15 @@ if __name__ == "__main__":
             base_model = get_model(args['arch'], args['num_classes'], args['seed']).to(device)
             base_model.load_state_dict(torch.load('{}/base_model.pt'.format(save_dir_path), map_location=device))
 
+        wandb_run = init_wandb(args, project=args['wandb_project'],
+                               group=args['wandb_group'], tags=wandb_tags)
+        iteration_metadata = []
+
         total_iters = len(corruption_list) * max_severity
         scores_list = []
         test_acc_list = []
         time_list = []
+        color_labels = []
         print('=' * 70)
         print('alg:{}, dataname:{}, model:{}, device:{}'.format(
             args['alg'], args['dataname'], args['arch'], device))
@@ -141,30 +171,73 @@ if __name__ == "__main__":
                 scores_list.append(float(scores))
                 time_list.append(float(iter_time))
                 test_acc_list.append(float(test_acc))
+                color_labels.append(corruption)
                 corr_scores.append(float(scores))
                 corr_accs.append(float(test_acc))
                 elapsed = time.time() - wall_start
                 eta = elapsed / iter_idx * (total_iters - iter_idx)
                 print('[{}/{}] corruption:{}, severity:{}, score:{:.4f}, test acc:{:.2f}%, time:{:.1f}s (elapsed:{:.0f}s, ETA:{:.0f}s)'.format(
                     iter_idx, total_iters, corruption, severity, float(scores), float(test_acc), iter_time, elapsed, eta))
+
+                log_iteration(wandb_run, iter_idx, corruption, severity,
+                              float(scores), float(test_acc), iter_time)
+                iteration_metadata.append({
+                    "iter": iter_idx,
+                    "corruption": corruption,
+                    "severity": severity,
+                    "score": float(scores),
+                    "test_acc": float(test_acc),
+                    "time": iter_time,
+                })
+
             if max_severity > 1:
                 print('  >> {} avg | score:{:.4f}, test acc:{:.2f}%'.format(
                     corruption, np.mean(corr_scores), np.mean(corr_accs)))
         total_wall = time.time() - wall_start
         mean_score = np.mean(scores_list)
         mean_time = np.mean(time_list)
+        r2 = float(correlation2(scores_list, test_acc_list))
+        sp = float(spearman(scores_list, test_acc_list).correlation)
         print('=' * 70)
         print('Mean scores:{}, time:{}'.format(mean_score, mean_time))
-        print("Correlation:{}".format(correlation2(scores_list, test_acc_list)))
-        print("Spearman:{}".format(spearman(scores_list, test_acc_list).correlation))
+        print("Correlation:{}".format(r2))
+        print("Spearman:{}".format(sp))
         print('Total wall time: {:.1f}s'.format(total_wall))
         print('=' * 70)
+
+        # Scatter plot
+        make_scatter_plot(
+            scores_list, test_acc_list, color_labels,
+            title='{} | {} | {}'.format(alg, dataname, arch),
+            save_path=scatter_path,
+        )
+
+        # JSON results
+        save_results_json({
+            "alg": alg, "dataname": dataname, "arch": arch,
+            "R2": r2, "spearman": sp,
+            "mean_score": float(mean_score), "mean_time": float(mean_time),
+            "total_wall_time": total_wall,
+            "iterations": iteration_metadata,
+        }, json_path)
+
+        # wandb summary + scatter upload + finish
+        log_summary(wandb_run, r2, sp, float(mean_score), float(mean_time), total_wall)
+        log_scatter_to_wandb(wandb_run, scatter_path)
+        finish_wandb(wandb_run)
+
     else:
+        # ---- Domain branch (pacs, office_home, domainnet) ----
+        wandb_run = init_wandb(args, project=args['wandb_project'],
+                               group=args['wandb_group'], tags=wandb_tags)
+        iteration_metadata = []
+
         n_domains = len(corruption_list)
         total_iters = n_domains * (n_domains - 1)
         scores_list = []
         test_acc_list = []
         time_list = []
+        color_labels = []
         print('=' * 70)
         print('alg:{}, dataname:{}, model:{}, device:{}'.format(
             args['alg'], args['dataname'], args['arch'], device))
@@ -194,17 +267,52 @@ if __name__ == "__main__":
                     scores_list.append(float(scores))
                     time_list.append(float(iter_time))
                     test_acc_list.append(float(test_acc))
+                    color_labels.append(source)
                     elapsed = time.time() - wall_start
                     eta = elapsed / iter_idx * (total_iters - iter_idx)
                     print('[{}/{}] source:{}, target:{}, score:{:.4f}, test acc:{:.2f}%, time:{:.1f}s (elapsed:{:.0f}s, ETA:{:.0f}s)'.format(
                         iter_idx, total_iters, source, corruption, float(scores), float(test_acc), iter_time, elapsed, eta))
+
+                    log_iteration(wandb_run, iter_idx, corruption, 1,
+                                  float(scores), float(test_acc), iter_time, source=source)
+                    iteration_metadata.append({
+                        "iter": iter_idx,
+                        "source": source,
+                        "target": corruption,
+                        "score": float(scores),
+                        "test_acc": float(test_acc),
+                        "time": iter_time,
+                    })
+
         total_wall = time.time() - wall_start
         mean_score = np.mean(scores_list)
         mean_time = np.mean(time_list)
+        r2 = float(correlation2(scores_list, test_acc_list))
+        sp = float(spearman(scores_list, test_acc_list).correlation)
         print('=' * 70)
         print('Mean scores:{}, time:{}'.format(mean_score, mean_time))
-        print("Correlation:{}".format(correlation2(scores_list, test_acc_list)))
-        print("Spearman:{}".format(spearman(scores_list, test_acc_list).correlation))
+        print("Correlation:{}".format(r2))
+        print("Spearman:{}".format(sp))
         print('Total wall time: {:.1f}s'.format(total_wall))
         print('=' * 70)
 
+        # Scatter plot (colored by source domain)
+        make_scatter_plot(
+            scores_list, test_acc_list, color_labels,
+            title='{} | {} | {}'.format(alg, dataname, arch),
+            save_path=scatter_path,
+        )
+
+        # JSON results
+        save_results_json({
+            "alg": alg, "dataname": dataname, "arch": arch,
+            "R2": r2, "spearman": sp,
+            "mean_score": float(mean_score), "mean_time": float(mean_time),
+            "total_wall_time": total_wall,
+            "iterations": iteration_metadata,
+        }, json_path)
+
+        # wandb summary + scatter upload + finish
+        log_summary(wandb_run, r2, sp, float(mean_score), float(mean_time), total_wall)
+        log_scatter_to_wandb(wandb_run, scatter_path)
+        finish_wandb(wandb_run)
