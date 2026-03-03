@@ -31,7 +31,7 @@ def init_wandb(args, project=None, group=None, tags=None):
     return run
 
 
-def log_iteration(wandb_run, iter_idx, corruption, severity, score, test_acc, iter_time, source=None):
+def log_iteration(wandb_run, iter_idx, corruption, severity, score, test_acc, iter_time, source=None, phi=None):
     """Log a single iteration to wandb."""
     if wandb_run is None:
         return
@@ -45,6 +45,8 @@ def log_iteration(wandb_run, iter_idx, corruption, severity, score, test_acc, it
     }
     if source is not None:
         payload["source"] = source
+    if phi is not None:
+        payload["phi"] = phi
     wandb_run.log(payload)
 
 

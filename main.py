@@ -30,7 +30,6 @@ parser.add_argument('--lr', default=0.001, type=float)
 parser.add_argument('--threshold', default=0.5, type=float)
 parser.add_argument('--seed', default=1, type=int)
 parser.add_argument('--norm_type', default=4, type=int)
-parser.add_argument('--delta', default=0, type=float)
 
 # pacs
 parser.add_argument('--source', default='None', type=str)
@@ -162,8 +161,6 @@ if __name__ == "__main__":
                 # Define model
                 alg_obj = create_alg(args['alg'], val_loader, device, args, base_model=base_model)
                 start_time = time.time()
-                if args['delta'] == 0:
-                    args['delta'] = alg_obj.uniform_cross_entropy()
                 scores = alg_obj.evaluate()
                 end_time = time.time()
                 test_acc = alg_obj.test()
@@ -180,13 +177,14 @@ if __name__ == "__main__":
                     iter_idx, total_iters, corruption, severity, float(scores), float(test_acc), iter_time, elapsed, eta))
 
                 log_iteration(wandb_run, iter_idx, corruption, severity,
-                              float(scores), float(test_acc), iter_time)
+                              float(scores), float(test_acc), iter_time, phi=float(alg_obj.phi))
                 iteration_metadata.append({
                     "iter": iter_idx,
                     "corruption": corruption,
                     "severity": severity,
                     "score": float(scores),
                     "test_acc": float(test_acc),
+                    "phi": float(alg_obj.phi),
                     "time": iter_time,
                 })
 
@@ -258,8 +256,6 @@ if __name__ == "__main__":
                     alg_obj = create_alg(args['alg'], val_loader, device, args)
 
                     start_time = time.time()
-                    if args['delta'] == 0:
-                        args['delta'] = alg_obj.uniform_cross_entropy()
                     scores = alg_obj.evaluate()
                     end_time = time.time()
 
@@ -275,13 +271,14 @@ if __name__ == "__main__":
                         iter_idx, total_iters, source, corruption, float(scores), float(test_acc), iter_time, elapsed, eta))
 
                     log_iteration(wandb_run, iter_idx, corruption, 1,
-                                  float(scores), float(test_acc), iter_time, source=source)
+                                  float(scores), float(test_acc), iter_time, source=source, phi=float(alg_obj.phi))
                     iteration_metadata.append({
                         "iter": iter_idx,
                         "source": source,
                         "target": corruption,
                         "score": float(scores),
                         "test_acc": float(test_acc),
+                        "phi": float(alg_obj.phi),
                         "time": iter_time,
                     })
 

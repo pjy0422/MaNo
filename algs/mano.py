@@ -6,6 +6,7 @@ import torch.nn as nn
 class MaNo(Base_alg):
     def evaluate(self):
         self.base_model.train()
+        self.phi = self.uniform_cross_entropy()
         score_list = []
 
         for batch_idx, batch_data in enumerate(self.val_loader):
@@ -25,8 +26,7 @@ class MaNo(Base_alg):
         return scores.mean()
 
     def scaling_method(self, logits):
-        loss = self.args['delta']
-        if loss > 5:
+        if self.phi > 5:
             outputs = torch.softmax(logits, dim=1)
         else:
             outputs = logits + 1 + logits ** 2 / 2
@@ -52,5 +52,5 @@ class MaNo(Base_alg):
                     losses.append(loss)
             else:
                 break
-        losses = torch.Tensor(loss)
+        losses = torch.stack(losses)
         return torch.mean(losses)
