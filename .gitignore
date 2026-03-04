@@ -20,6 +20,13 @@ datasets/
 results/
 wandb/
 
+# Archives
+*.tar.gz
+
+# Job output
+*.err
+*.out
+
 # OS
 .DS_Store
 Thumbs.db
