@@ -14,7 +14,7 @@ class Base_alg:
             self.base_model = get_imagenet_model(args['arch'], args['num_classes'], args['seed']).to(device)
         else:
             self.base_model = get_model(args['arch'], args['num_classes'], args['seed']).to(device)
-            self.base_model.load_state_dict(torch.load('{}/base_model.pt'.format(self.save_dir_path), map_location=device))
+            self.base_model.load_state_dict(torch.load('{}/base_model.pt'.format(self.save_dir_path), map_location=device, weights_only=False))
 
         self.val_loader = val_loader
         self.device = device

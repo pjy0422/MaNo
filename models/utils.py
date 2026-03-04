@@ -1,6 +1,7 @@
 from models.resnet import *
 from models.wrn import *
 
+import torch
 import torchvision.models as models
 
 

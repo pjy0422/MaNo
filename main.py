@@ -130,7 +130,7 @@ if __name__ == "__main__":
         else:
             save_dir_path = './checkpoints/{}'.format(args['dataname'] + '_' + args['arch'])
             base_model = get_model(args['arch'], args['num_classes'], args['seed']).to(device)
-            base_model.load_state_dict(torch.load('{}/base_model.pt'.format(save_dir_path), map_location=device))
+            base_model.load_state_dict(torch.load('{}/base_model.pt'.format(save_dir_path), map_location=device, weights_only=False))
 
         wandb_run = init_wandb(args, project=args['wandb_project'],
                                group=args['wandb_group'], tags=wandb_tags)

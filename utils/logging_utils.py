@@ -139,7 +139,7 @@ def save_results_json(results_dict, save_path):
 
 
 def log_artifacts_to_wandb(wandb_run, json_path, scatter_path):
-    """Upload JSON results and scatter plot PDF as wandb artifacts."""
+    """Upload JSON results, scatter plot PDF, and PNG image as wandb artifacts."""
     if wandb_run is None:
         return
     try:
@@ -152,6 +152,10 @@ def log_artifacts_to_wandb(wandb_run, json_path, scatter_path):
             artifact.add_file(json_path)
         if os.path.exists(scatter_path):
             artifact.add_file(scatter_path)
+        # Also add PNG image if it exists
+        png_path = os.path.splitext(scatter_path)[0] + '.png'
+        if os.path.exists(png_path):
+            artifact.add_file(png_path)
         wandb_run.log_artifact(artifact)
         print("[logging_utils] Artifacts uploaded to wandb.")
     except Exception as e:
