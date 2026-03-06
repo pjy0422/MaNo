@@ -1,0 +1,260 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+% Color definitions
+\definecolor{maxcolor}{RGB}{214, 39, 40}   % red  -- max attack
+\definecolor{mincolor}{RGB}{44, 160, 44}   % green -- min attack
+\definecolor{cleancolor}{RGB}{31, 119, 180} % blue  -- clean
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamerfont{frametitle}{size=\large}
+
+% Notation shortcuts
+\newcommand{\norm}[2]{\left\|#1\right\|_{#2}}
+\newcommand{\CE}{\mathcal{L}_{\mathrm{CE}}}
+\newcommand{\kstar}{k^{*}}
+\newcommand{\Phi}{\varphi}
+
+\title[MaNo Attacks]{\textbf{MaNo Attack Formulations}}
+\subtitle{Norm Maximization \& Norm Minimization Attacks}
+\date{}
+
+\begin{document}
+
+% ─────────────────────────────────────────────────────────────────────
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────────────
+\begin{frame}{MaNo Score (Clean Baseline)}
+
+Let $f : \mathcal{X} \to \mathbb{R}^K$ be the model, $\{x_i\}_{i=1}^N$ the test set,
+and $\Phi = H(f, \mathbf{u})$ the uniform cross-entropy of the model.
+
+\medskip
+\textbf{Scaling method} (adaptive to $\Phi$):
+\[
+  s(z) \;=\;
+  \begin{cases}
+    \mathrm{softmax}(z) & \text{if } \Phi > 5 \\[4pt]
+    \displaystyle
+    \frac{z + 1 + z^{2}/2 - \min_j(\cdot)}
+         {\norm{z + 1 + z^{2}/2 - \min_j(\cdot)}{1}}
+    & \text{otherwise}
+  \end{cases}
+\]
+
+\medskip
+\textbf{MaNo score} (per batch, then averaged):
+\[
+  \boxed{
+    \mathrm{MaNo}(X) \;=\;
+    \frac{1}{|\mathcal{B}|}
+    \sum_{\text{batch}} \;
+    \frac{\norm{s(f(X))}{p}}{\bigl(B \cdot K\bigr)^{1/p}}
+  }
+  \quad p = 4 \;(\text{default})
+\]
+
+\smallskip
+\begin{block}{Intuition}
+  High MaNo $\approx$ confident (peaky) predictions $\approx$ high accuracy.
+  The attacks exploit this by manipulating softmax sharpness.
+\end{block}
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────────────
+\begin{frame}{Attack Objectives}
+
+Two attack directions, applied to \emph{every} test batch:
+
+\bigskip
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+  \begin{block}{\textcolor{maxcolor}{\textbf{Norm Maximization (Max Attack)}}}
+    \textbf{Goal:} inflate MaNo $\Rightarrow$ over-estimate accuracy.\\[6pt]
+    Push predictions toward \emph{one-hot} vectors by driving each
+    sample to its current argmax $\kstar = \arg\max f(x)$:
+    \[
+      \min_{\delta}\; \CE\!\bigl(f(x+\delta),\, \kstar\bigr)
+    \]
+    Constraint: $\|\delta\|_\infty \le \varepsilon$.
+  \end{block}
+\end{column}
+\hfill
+\begin{column}{0.48\textwidth}
+  \begin{block}{\textcolor{mincolor}{\textbf{Norm Minimization (Min Attack)}}}
+    \textbf{Goal:} deflate MaNo $\Rightarrow$ under-estimate accuracy.\\[6pt]
+    Flatten predictions toward a \emph{near-uniform} target $T$:
+    \[
+      \min_{\delta}\; \CE\!\bigl(\sigma(f(x+\delta)),\, T\bigr)
+    \]
+    where $\sigma = $ softmax. Constraint: $\|\delta\|_\infty \le \varepsilon$.
+  \end{block}
+\end{column}
+\end{columns}
+
+\bigskip
+\textbf{Soft target $T$ (min attack):}
+\[
+  T_j =
+  \begin{cases}
+    \tfrac{1}{K} + \gamma & j = \kstar \\[2pt]
+    \dfrac{1 - \bigl(\tfrac{1}{K}+\gamma\bigr)}{K-1} & j \ne \kstar
+  \end{cases}
+  \qquad \gamma = 0.05 \;(\text{default})
+\]
+Predicted class order is \emph{preserved}: $\arg\max T = \kstar$.
+
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────────────
+\begin{frame}{PGD Update Rule (shared by Max \& Min)}
+
+Given loss $\mathcal{L}(\delta)$ (either Max or Min objective):
+
+\medskip
+\textbf{Initialization:} $\delta^{(0)} = \mathbf{0}$
+
+\medskip
+\textbf{Iteration} $t = 0, \ldots, T-1$:
+\begin{align*}
+  g^{(t)} &= \nabla_\delta \,\mathcal{L}(\delta^{(t)})\\[4pt]
+  \tilde\delta^{(t+1)} &= \delta^{(t)} - \alpha \cdot \operatorname{sign}(g^{(t)})
+  \quad \text{(gradient \emph{descent})} \\[4pt]
+  \delta^{(t+1)} &= \Pi_{\|\cdot\|_\infty \le \varepsilon}
+    \!\left(\tilde\delta^{(t+1)}\right)
+  \quad \text{s.t. } x + \delta^{(t+1)} \in [0,1]^d
+\end{align*}
+
+\medskip
+\begin{block}{Note on normalization}
+  Inputs are ImageNet-normalized. $\varepsilon$ and $\alpha$ are specified in
+  \emph{pixel space} $[0,1]$ and converted per-channel:
+  $\varepsilon_c = \varepsilon / \sigma_c$,\; $\alpha_c = \alpha / \sigma_c$.
+\end{block}
+
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────────────
+\begin{frame}{Analytical Attacks (Zero-Cost)}
+
+No input perturbation. Instead, \textbf{temperature-scale logits}
+directly before the MaNo scoring function.
+
+\medskip
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+  \begin{block}{\textcolor{maxcolor}{\textbf{Analytical Max (Fast)}}}
+    \[
+      \hat{z} = z \,/\, \tau, \quad \tau \to 0
+    \]
+    As $\tau \to 0$: $\mathrm{softmax}(\hat{z}) \to$ one-hot.\\
+    $\Rightarrow$ MaNo score $\uparrow$
+  \end{block}
+\end{column}
+\hfill
+\begin{column}{0.48\textwidth}
+  \begin{block}{\textcolor{mincolor}{\textbf{Analytical Min (Fast)}}}
+    \[
+      \hat{z} = z \cdot \tau, \quad \tau \to 0
+    \]
+    As $\tau \to 0$: $\mathrm{softmax}(\hat{z}) \to$ uniform.\\
+    $\Rightarrow$ MaNo score $\downarrow$
+  \end{block}
+\end{column}
+\end{columns}
+
+\medskip
+\textbf{Default:} $\tau = 0.01$
+
+\smallskip
+\begin{alertblock}{Key property}
+  Argmax class is \emph{always preserved} under temperature scaling
+  ($\arg\max(\hat{z}/\tau) = \arg\max z$ for any $\tau > 0$).
+  Adversarial accuracy equals clean accuracy.
+\end{alertblock}
+
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────────────
+\begin{frame}{Attack Hyperparameters Summary}
+
+\begin{table}
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Mode} & $\varepsilon$ & $\alpha$ & \textbf{Steps} $T$ & \textbf{Extra} \\
+\midrule
+\textcolor{cleancolor}{Clean MaNo}
+  & --- & --- & --- & --- \\[2pt]
+\textcolor{maxcolor}{Max / Min (PGD)}
+  & $8/255$ & $2/255$ & $20$
+  & $\gamma = 0.05$ (min only) \\[2pt]
+\textcolor{maxcolor}{Max / Min (FGSM)}
+  & $8/255$ & $= \varepsilon$ & $1$
+  & $\gamma = 0.05$ (min only) \\[2pt]
+\textcolor{maxcolor}{Max / Min (Analytical)}
+  & --- & --- & ---
+  & $\tau = 0.01$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\medskip
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+  \textbf{Norm type:} $p = 4$ (default)\\
+  \textbf{Uniform CE threshold:} $\Phi > 5$ $\Rightarrow$ use softmax scaling
+\end{column}
+\begin{column}{0.48\textwidth}
+  \textbf{Evaluation metric (post-attack):}\\
+  \quad Adversarial accuracy \& MaNo score\\
+  \quad Spearman $\rho$ and $R^2$ vs.\ clean accuracy
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────────────
+\begin{frame}{Summary: Attack Design Space}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  % Axis
+  \draw[->, thick] (0,0) -- (9,0) node[right] {\small Softmax sharpness};
+  \draw[->, thick] (0,0) -- (0,3) node[above] {\small MaNo score};
+  % Uniform
+  \fill[mincolor!40] (0.5,0.3) circle (3pt);
+  \node[mincolor, above right, font=\small] at (0.5,0.3) {Uniform};
+  % Clean
+  \fill[cleancolor] (4.5,1.5) circle (4pt);
+  \node[cleancolor, above, font=\small] at (4.5,1.5) {Clean};
+  % One-hot
+  \fill[maxcolor!60] (8,2.7) circle (3pt);
+  \node[maxcolor, above left, font=\small] at (8,2.7) {One-hot};
+  % Arrows
+  \draw[->, mincolor, thick, dashed] (4.2,1.4) -- (0.9,0.45)
+    node[midway, below, sloped, font=\scriptsize] {Min Attack};
+  \draw[->, maxcolor, thick, dashed] (4.8,1.6) -- (7.7,2.6)
+    node[midway, above, sloped, font=\scriptsize] {Max Attack};
+  % Analytical label
+  \node[font=\scriptsize, gray] at (4.5,0.3)
+    {Analytical: $z/\tau$ (max) or $z\cdot\tau$ (min), $\tau{=}0.01$};
+\end{tikzpicture}
+\end{center}
+
+\medskip
+Both attacks preserve the \textbf{predicted class label} ($\arg\max$ unchanged).\\
+The attack only modifies \emph{how confident} the model appears --- not \emph{what} it predicts.
+
+\end{frame}
+
+\end{document}
